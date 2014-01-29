@@ -1,0 +1,13 @@
+{
+    "id" : "PlantPack",
+    "version" : "0.1.0",
+    "author" : "",
+    "displayName" : "PlantPack",
+    "description" : "",
+    "dependencies" : [
+            {
+                "id" : "GrowingFlora",
+                "minVersion" : "0.1.0"
+            }],
+    "isServerSideOnly" : false
+}
