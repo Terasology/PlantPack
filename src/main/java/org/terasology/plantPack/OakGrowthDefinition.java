@@ -81,11 +81,11 @@ public class OakGrowthDefinition implements PlantGrowthDefinition {
         replacementMap.put('T', trunk);
         replacementMap.put('b', smallBranch);
 
-        String oakSapling = "PlantPack:OakSapling";
-        String oakSaplingGenerated = GENERATED_BLOCK;
-        String greenLeaf = "PlantPack:OakLeaf";
-        String oakTrunk = "PlantPack:OakTrunk";
-        String oakBranch = "PlantPack:OakBranch";
+        TreeBlockDefinition oakSapling = new TreeBlockDefinition("PlantPack:OakSapling");
+        TreeBlockDefinition oakSaplingGenerated = new TreeBlockDefinition(GENERATED_BLOCK);
+        TreeBlockDefinition greenLeaf = new TreeBlockDefinition("PlantPack:OakLeaf");
+        TreeBlockDefinition oakTrunk = new TreeBlockDefinition("PlantPack:OakTrunk");
+        TreeBlockDefinition oakBranch = new TreeBlockDefinition("PlantPack:OakBranch", true);
 
         float trunkAdvance = 0.3f;
         float branchAdvance = 0.2f;

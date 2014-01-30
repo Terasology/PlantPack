@@ -81,11 +81,11 @@ public class PineGrowthDefinition implements PlantGrowthDefinition {
         replacementMap.put('T', trunk);
         replacementMap.put('b', smallBranch);
 
-        String oakSapling = "PlantPack:PineSapling";
-        String oakSaplingGenerated = GENERATED_BLOCK;
-        String greenLeaf = "PlantPack:PineLeaf";
-        String oakTrunk = "PlantPack:PineTrunk";
-        String oakBranch = "PlantPack:PineBranch";
+        TreeBlockDefinition oakSapling = new TreeBlockDefinition("PlantPack:PineSapling");
+        TreeBlockDefinition oakSaplingGenerated = new TreeBlockDefinition(GENERATED_BLOCK);
+        TreeBlockDefinition greenLeaf = new TreeBlockDefinition("PlantPack:PineLeaf");
+        TreeBlockDefinition oakTrunk = new TreeBlockDefinition("PlantPack:PineTrunk");
+        TreeBlockDefinition oakBranch = new TreeBlockDefinition("PlantPack:PineBranch", true);
 
         float trunkAdvance = 0.3f;
         float branchAdvance = 0.15f;
