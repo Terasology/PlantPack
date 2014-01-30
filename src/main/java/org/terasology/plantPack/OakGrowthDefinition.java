@@ -16,11 +16,14 @@
 package org.terasology.plantPack;
 
 import com.google.common.collect.Maps;
+import org.terasology.anotherWorld.GenerationParameters;
 import org.terasology.entitySystem.entity.EntityRef;
 import org.terasology.gf.generator.PlantGrowthDefinition;
 import org.terasology.gf.tree.lsystem.*;
+import org.terasology.math.Vector3i;
 import org.terasology.utilities.random.FastRandom;
 import org.terasology.world.BlockEntityRegistry;
+import org.terasology.world.ChunkView;
 import org.terasology.world.WorldProvider;
 import org.terasology.world.generator.plugin.RegisterPlugin;
 
@@ -30,6 +33,7 @@ import java.util.Map;
 @RegisterPlugin
 public class OakGrowthDefinition implements PlantGrowthDefinition {
     public static final String ID = "PlantPack:oak";
+    public static final String GENERATED_BLOCK = "PlantPack:OakSaplingGenerated";
 
     private AdvancedLSystemTreeDefinition treeDefinition;
 
@@ -78,7 +82,7 @@ public class OakGrowthDefinition implements PlantGrowthDefinition {
         replacementMap.put('b', smallBranch);
 
         String oakSapling = "PlantPack:OakSapling";
-        String oakSaplingGenerated = "PlantPack:OakSaplingGenerated";
+        String oakSaplingGenerated = GENERATED_BLOCK;
         String greenLeaf = "PlantPack:OakLeaf";
         String oakTrunk = "PlantPack:OakTrunk";
         String oakBranch = "PlantPack:OakBranch";
@@ -114,12 +118,17 @@ public class OakGrowthDefinition implements PlantGrowthDefinition {
     }
 
     @Override
-    public boolean initializeSapling(WorldProvider worldProvider, BlockEntityRegistry blockEntityRegistry, EntityRef sapling) {
-        return treeDefinition.initializeSapling(worldProvider, blockEntityRegistry, sapling);
+    public void generatePlant(String seed, Vector3i chunkPos, ChunkView chunkView, int x, int y, int z, GenerationParameters generationParameters) {
+        treeDefinition.generateTree(seed, GENERATED_BLOCK, chunkPos, chunkView, x, y, z);
+    }
+
+    @Override
+    public boolean initializePlant(WorldProvider worldProvider, BlockEntityRegistry blockEntityRegistry, EntityRef plant) {
+        return treeDefinition.setupTreeBaseBlock(worldProvider, blockEntityRegistry, plant);
     }
 
     @Override
     public void updatePlant(WorldProvider worldProvider, BlockEntityRegistry blockEntityRegistry, EntityRef treeRef) {
-        treeDefinition.updatePlant(worldProvider, blockEntityRegistry, treeRef);
+        treeDefinition.updateTree(worldProvider, blockEntityRegistry, treeRef);
     }
 }
