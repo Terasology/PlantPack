@@ -1,9 +1,9 @@
 {
     "id" : "PlantPack",
     "version" : "0.1.0",
-    "author" : "",
+    "author" : "Marcin Sciesinski <marcins78@gmail.com>",
     "displayName" : "PlantPack",
-    "description" : "",
+    "description" : "Provides basic plant definitions",
     "dependencies" : [
             {
                 "id" : "AnotherWorld",
