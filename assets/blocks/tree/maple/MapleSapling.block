@@ -1,0 +1,7 @@
+{
+    "basedOn": "core:plant",
+    "displayName": "Maple Sapling",
+    "entity": {
+        "prefab": "PlantPack:MapleSapling"
+    }
+}

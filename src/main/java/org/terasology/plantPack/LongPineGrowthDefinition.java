@@ -38,13 +38,13 @@ import java.util.Arrays;
 import java.util.Map;
 
 @RegisterPlugin
-public class PineGrowthDefinition implements PlantGrowthDefinition {
-    public static final String ID = "PlantPack:pine";
-    public static final String GENERATED_BLOCK = "PlantPack:PineSaplingGenerated";
+public class LongPineGrowthDefinition implements PlantGrowthDefinition {
+    public static final String ID = "PlantPack:longPine";
+    public static final String GENERATED_BLOCK = "PlantPack:LongPineSaplingGenerated";
 
     private AdvancedLSystemTreeDefinition treeDefinition;
 
-    public PineGrowthDefinition() {
+    public LongPineGrowthDefinition() {
         Map<Character, AxionElementReplacement> replacementMap = Maps.newHashMap();
 
         SimpleAxionElementReplacement sapling = new SimpleAxionElementReplacement("s");
@@ -88,11 +88,11 @@ public class PineGrowthDefinition implements PlantGrowthDefinition {
         replacementMap.put('T', trunk);
         replacementMap.put('b', smallBranch);
 
-        TreeBlockDefinition pineSapling = new TreeBlockDefinition("PlantPack:PineSapling");
+        TreeBlockDefinition pineSapling = new TreeBlockDefinition("PlantPack:LongPineSapling");
         TreeBlockDefinition pineSaplingGenerated = new TreeBlockDefinition(GENERATED_BLOCK);
-        TreeBlockDefinition greenLeaf = new TreeBlockDefinition("PlantPack:PineLeaf");
-        TreeBlockDefinition pineTrunk = new TreeBlockDefinition("PlantPack:PineTrunk");
-        TreeBlockDefinition pineBranch = new TreeBlockDefinition("PlantPack:PineBranch", true);
+        TreeBlockDefinition greenLeaf = new TreeBlockDefinition("PlantPack:LongPineLeaf");
+        TreeBlockDefinition pineTrunk = new TreeBlockDefinition("PlantPack:LongPineTrunk");
+        TreeBlockDefinition pineBranch = new TreeBlockDefinition("PlantPack:LongPineBranch", true);
 
         float trunkAdvance = 0.3f;
         float branchAdvance = 0.15f;

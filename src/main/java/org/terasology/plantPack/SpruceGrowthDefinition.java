@@ -38,13 +38,13 @@ import java.util.Arrays;
 import java.util.Map;
 
 @RegisterPlugin
-public class PineGrowthDefinition implements PlantGrowthDefinition {
-    public static final String ID = "PlantPack:pine";
-    public static final String GENERATED_BLOCK = "PlantPack:PineSaplingGenerated";
+public class SpruceGrowthDefinition implements PlantGrowthDefinition {
+    public static final String ID = "PlantPack:spruce";
+    public static final String GENERATED_BLOCK = "PlantPack:SpruceSaplingGenerated";
 
     private AdvancedLSystemTreeDefinition treeDefinition;
 
-    public PineGrowthDefinition() {
+    public SpruceGrowthDefinition() {
         Map<Character, AxionElementReplacement> replacementMap = Maps.newHashMap();
 
         SimpleAxionElementReplacement sapling = new SimpleAxionElementReplacement("s");
@@ -88,35 +88,35 @@ public class PineGrowthDefinition implements PlantGrowthDefinition {
         replacementMap.put('T', trunk);
         replacementMap.put('b', smallBranch);
 
-        TreeBlockDefinition pineSapling = new TreeBlockDefinition("PlantPack:PineSapling");
-        TreeBlockDefinition pineSaplingGenerated = new TreeBlockDefinition(GENERATED_BLOCK);
-        TreeBlockDefinition greenLeaf = new TreeBlockDefinition("PlantPack:PineLeaf");
-        TreeBlockDefinition pineTrunk = new TreeBlockDefinition("PlantPack:PineTrunk");
-        TreeBlockDefinition pineBranch = new TreeBlockDefinition("PlantPack:PineBranch", true);
+        TreeBlockDefinition spruceSapling = new TreeBlockDefinition("PlantPack:SpruceSapling");
+        TreeBlockDefinition spruceSaplingGenerated = new TreeBlockDefinition(GENERATED_BLOCK);
+        TreeBlockDefinition greenLeaf = new TreeBlockDefinition("PlantPack:SpruceLeaf");
+        TreeBlockDefinition spruceTrunk = new TreeBlockDefinition("PlantPack:SpruceTrunk");
+        TreeBlockDefinition spruceBranch = new TreeBlockDefinition("PlantPack:SpruceBranch", true);
 
         float trunkAdvance = 0.3f;
         float branchAdvance = 0.15f;
 
         Map<Character, AxionElementGeneration> blockMap = Maps.newHashMap();
-        blockMap.put('s', new DefaultAxionElementGeneration(pineSapling, trunkAdvance));
-        blockMap.put('g', new DefaultAxionElementGeneration(pineSaplingGenerated, trunkAdvance));
+        blockMap.put('s', new DefaultAxionElementGeneration(spruceSapling, trunkAdvance));
+        blockMap.put('g', new DefaultAxionElementGeneration(spruceSaplingGenerated, trunkAdvance));
 
         // Trunk building blocks
         blockMap.put('t', new SurroundAxionElementGeneration(greenLeaf, greenLeaf, trunkAdvance, 1.2f));
-        blockMap.put('T', new DefaultAxionElementGeneration(pineTrunk, trunkAdvance));
-        blockMap.put('N', new DefaultAxionElementGeneration(pineTrunk, trunkAdvance));
-        blockMap.put('W', new SurroundAxionElementGeneration(pineBranch, greenLeaf, trunkAdvance, 1.2f));
+        blockMap.put('T', new DefaultAxionElementGeneration(spruceTrunk, trunkAdvance));
+        blockMap.put('N', new DefaultAxionElementGeneration(spruceTrunk, trunkAdvance));
+        blockMap.put('W', new SurroundAxionElementGeneration(spruceBranch, greenLeaf, trunkAdvance, 1.2f));
 
         // Branch building blocks
         SurroundAxionElementGeneration smallBranchGeneration = new SurroundAxionElementGeneration(greenLeaf, greenLeaf, branchAdvance, 1.4f);
         smallBranchGeneration.setMaxZ(0);
-        SurroundAxionElementGeneration largeBranchGeneration = new SurroundAxionElementGeneration(pineBranch, greenLeaf, branchAdvance, 0.8f, 1.8f);
+        SurroundAxionElementGeneration largeBranchGeneration = new SurroundAxionElementGeneration(spruceBranch, greenLeaf, branchAdvance, 0.8f, 1.8f);
         largeBranchGeneration.setMaxZ(0);
         blockMap.put('b', smallBranchGeneration);
         blockMap.put('B', largeBranchGeneration);
         blockMap.put('M', new AdvanceAxionElementGeneration(branchAdvance));
 
-        treeDefinition = new AdvancedLSystemTreeDefinition(ID, "g", replacementMap, blockMap, Arrays.asList(pineTrunk, pineBranch, greenLeaf), 1.5f);
+        treeDefinition = new AdvancedLSystemTreeDefinition(ID, "g", replacementMap, blockMap, Arrays.asList(spruceTrunk, spruceBranch, greenLeaf), 1.5f);
     }
 
     @Override
