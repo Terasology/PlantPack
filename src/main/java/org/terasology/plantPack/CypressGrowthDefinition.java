@@ -94,8 +94,8 @@ public class CypressGrowthDefinition implements PlantGrowthDefinition {
         TreeBlockDefinition cypressTrunk = new TreeBlockDefinition("PlantPack:CypressTrunk");
         TreeBlockDefinition cypressBranch = new TreeBlockDefinition("PlantPack:CypressBranch", true);
 
-        float trunkAdvance = 0.25f;
-        float branchAdvance = 0.12f;
+        float trunkAdvance = 0.4f;
+        float branchAdvance = 0.25f;
 
         Map<Character, AxionElementGeneration> blockMap = Maps.newHashMap();
         blockMap.put('s', new DefaultAxionElementGeneration(cypressSapling, trunkAdvance));
