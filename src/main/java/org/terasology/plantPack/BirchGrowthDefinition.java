@@ -58,7 +58,7 @@ public class BirchGrowthDefinition implements PlantGrowthDefinition {
                     @Override
                     public String generateReplacement(String currentAxion) {
                         // 137.5 degrees is a golden ratio
-                        int deg = rnd.nextInt(130, 147);
+                        int deg = rnd.nextInt(120, 157);
                         return "+(" + deg + ")[&Mb]Wt";
                     }
                 });
@@ -94,8 +94,8 @@ public class BirchGrowthDefinition implements PlantGrowthDefinition {
         TreeBlockDefinition birchTrunk = new TreeBlockDefinition("PlantPack:BirchTrunk");
         TreeBlockDefinition birchBranch = new TreeBlockDefinition("PlantPack:BirchBranch", true);
 
-        float trunkAdvance = 0.3f;
-        float branchAdvance = 0.2f;
+        float trunkAdvance = 0.6f;
+        float branchAdvance = 0.1f;
 
         Map<Character, AxionElementGeneration> blockMap = Maps.newHashMap();
         blockMap.put('s', new DefaultAxionElementGeneration(birchSapling, trunkAdvance));

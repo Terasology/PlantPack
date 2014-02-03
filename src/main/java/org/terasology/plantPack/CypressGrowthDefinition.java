@@ -58,7 +58,7 @@ public class CypressGrowthDefinition implements PlantGrowthDefinition {
                     @Override
                     public String generateReplacement(String currentAxion) {
                         // 137.5 degrees is a golden ratio
-                        int deg = rnd.nextInt(135, 145);
+                        int deg = rnd.nextInt(132, 143);
                         return "N+(" + deg + ")[&Mb]Wt";
                     }
                 });
@@ -94,8 +94,8 @@ public class CypressGrowthDefinition implements PlantGrowthDefinition {
         TreeBlockDefinition cypressTrunk = new TreeBlockDefinition("PlantPack:CypressTrunk");
         TreeBlockDefinition cypressBranch = new TreeBlockDefinition("PlantPack:CypressBranch", true);
 
-        float trunkAdvance = 0.4f;
-        float branchAdvance = 0.8f;
+        float trunkAdvance = 0.25f;
+        float branchAdvance = 0.12f;
 
         Map<Character, AxionElementGeneration> blockMap = Maps.newHashMap();
         blockMap.put('s', new DefaultAxionElementGeneration(cypressSapling, trunkAdvance));

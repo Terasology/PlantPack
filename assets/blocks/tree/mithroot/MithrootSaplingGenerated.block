@@ -1,0 +1,9 @@
+{
+    "basedOn": "core:plant",
+    "displayName": "Mithroot Sapling",
+    "shadowCasting" : false,
+    "luminance" : 3,
+    "entity": {
+        "prefab": "PlantPack:MithrootSaplingGenerated"
+    }
+}

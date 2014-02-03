@@ -1,0 +1,10 @@
+{
+    "LivingPlant": {
+        "type": "PlantPack:mithroot"
+    },
+    "LSystemTree": {
+        "axion": "s",
+        "generation": 1
+    },
+    "PartOfTree": {}
+}

@@ -1,0 +1,10 @@
+{
+    "LivingPlant": {
+        "type": "PlantPack:broom"
+    },
+    "LSystemTree": {
+        "axion": "s",
+        "generation": 1
+    },
+    "PartOfTree": {}
+}
