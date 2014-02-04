@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *  http://www.apache.org/licenses/LICENSE-2.0
+ *      http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -19,6 +19,7 @@ import com.google.common.collect.Maps;
 import org.terasology.anotherWorld.GenerationParameters;
 import org.terasology.entitySystem.entity.EntityRef;
 import org.terasology.gf.generator.PlantGrowthDefinition;
+import org.terasology.gf.tree.PartOfTreeComponent;
 import org.terasology.gf.tree.lsystem.AdvanceAxionElementGeneration;
 import org.terasology.gf.tree.lsystem.AdvancedLSystemTreeDefinition;
 import org.terasology.gf.tree.lsystem.AxionElementGeneration;
@@ -34,7 +35,6 @@ import org.terasology.world.ChunkView;
 import org.terasology.world.WorldProvider;
 import org.terasology.world.generator.plugin.RegisterPlugin;
 
-import java.util.Arrays;
 import java.util.Map;
 
 @RegisterPlugin
@@ -88,11 +88,11 @@ public class MithrootGrowthDefinition implements PlantGrowthDefinition {
         replacementMap.put('T', trunk);
         replacementMap.put('b', smallBranch);
 
-        TreeBlockDefinition mithrootSapling = new TreeBlockDefinition("PlantPack:MithrootSapling");
-        TreeBlockDefinition mithrootSaplingGenerated = new TreeBlockDefinition(GENERATED_BLOCK);
-        TreeBlockDefinition greenLeaf = new TreeBlockDefinition("PlantPack:MithrootLeaf");
-        TreeBlockDefinition mithrootTrunk = new TreeBlockDefinition("PlantPack:MithrootTrunk");
-        TreeBlockDefinition mithrootBranch = new TreeBlockDefinition("PlantPack:MithrootBranch", true);
+        TreeBlockDefinition mithrootSapling = new TreeBlockDefinition("PlantPack:MithrootSapling", PartOfTreeComponent.Part.SAPLING);
+        TreeBlockDefinition mithrootSaplingGenerated = new TreeBlockDefinition(GENERATED_BLOCK, PartOfTreeComponent.Part.SAPLING);
+        TreeBlockDefinition greenLeaf = new TreeBlockDefinition("PlantPack:MithrootLeaf", PartOfTreeComponent.Part.LEAF);
+        TreeBlockDefinition mithrootTrunk = new TreeBlockDefinition("PlantPack:MithrootTrunk", PartOfTreeComponent.Part.TRUNK);
+        TreeBlockDefinition mithrootBranch = new TreeBlockDefinition("PlantPack:MithrootBranch", PartOfTreeComponent.Part.BRANCH);
 
         float trunkAdvance = 0.3f;
         float branchAdvance = 0.8f;
@@ -116,7 +116,7 @@ public class MithrootGrowthDefinition implements PlantGrowthDefinition {
         blockMap.put('B', largeBranchGeneration);
         blockMap.put('M', new AdvanceAxionElementGeneration(branchAdvance));
 
-        treeDefinition = new AdvancedLSystemTreeDefinition(ID, "g", replacementMap, blockMap, Arrays.asList(mithrootTrunk, mithrootBranch, greenLeaf), 1.5f);
+        treeDefinition = new AdvancedLSystemTreeDefinition(ID, "g", replacementMap, blockMap, 1.5f);
     }
 
     @Override

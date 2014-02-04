@@ -19,6 +19,7 @@ import com.google.common.collect.Maps;
 import org.terasology.anotherWorld.GenerationParameters;
 import org.terasology.entitySystem.entity.EntityRef;
 import org.terasology.gf.generator.PlantGrowthDefinition;
+import org.terasology.gf.tree.PartOfTreeComponent;
 import org.terasology.gf.tree.lsystem.AdvanceAxionElementGeneration;
 import org.terasology.gf.tree.lsystem.AdvancedLSystemTreeDefinition;
 import org.terasology.gf.tree.lsystem.AxionElementGeneration;
@@ -34,7 +35,6 @@ import org.terasology.world.ChunkView;
 import org.terasology.world.WorldProvider;
 import org.terasology.world.generator.plugin.RegisterPlugin;
 
-import java.util.Arrays;
 import java.util.Map;
 
 @RegisterPlugin
@@ -88,11 +88,11 @@ public class OakGrowthDefinition implements PlantGrowthDefinition {
         replacementMap.put('T', trunk);
         replacementMap.put('b', smallBranch);
 
-        TreeBlockDefinition oakSapling = new TreeBlockDefinition("PlantPack:OakSapling");
-        TreeBlockDefinition oakSaplingGenerated = new TreeBlockDefinition(GENERATED_BLOCK);
-        TreeBlockDefinition greenLeaf = new TreeBlockDefinition("PlantPack:OakLeaf");
-        TreeBlockDefinition oakTrunk = new TreeBlockDefinition("PlantPack:OakTrunk");
-        TreeBlockDefinition oakBranch = new TreeBlockDefinition("PlantPack:OakBranch", true);
+        TreeBlockDefinition oakSapling = new TreeBlockDefinition("PlantPack:OakSapling", PartOfTreeComponent.Part.SAPLING);
+        TreeBlockDefinition oakSaplingGenerated = new TreeBlockDefinition(GENERATED_BLOCK, PartOfTreeComponent.Part.SAPLING);
+        TreeBlockDefinition greenLeaf = new TreeBlockDefinition("PlantPack:OakLeaf", PartOfTreeComponent.Part.LEAF);
+        TreeBlockDefinition oakTrunk = new TreeBlockDefinition("PlantPack:OakTrunk", PartOfTreeComponent.Part.TRUNK);
+        TreeBlockDefinition oakBranch = new TreeBlockDefinition("PlantPack:OakBranch", PartOfTreeComponent.Part.BRANCH);
 
         float trunkAdvance = 0.3f;
         float branchAdvance = 0.2f;
@@ -116,7 +116,7 @@ public class OakGrowthDefinition implements PlantGrowthDefinition {
         blockMap.put('B', largeBranchGeneration);
         blockMap.put('M', new AdvanceAxionElementGeneration(branchAdvance));
 
-        treeDefinition = new AdvancedLSystemTreeDefinition(ID, "g", replacementMap, blockMap, Arrays.asList(oakTrunk, oakBranch, greenLeaf), 1.5f);
+        treeDefinition = new AdvancedLSystemTreeDefinition(ID, "g", replacementMap, blockMap, 1.5f);
     }
 
     @Override

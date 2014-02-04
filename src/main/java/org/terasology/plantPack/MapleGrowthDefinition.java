@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *  http://www.apache.org/licenses/LICENSE-2.0
+ *      http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -19,6 +19,7 @@ import com.google.common.collect.Maps;
 import org.terasology.anotherWorld.GenerationParameters;
 import org.terasology.entitySystem.entity.EntityRef;
 import org.terasology.gf.generator.PlantGrowthDefinition;
+import org.terasology.gf.tree.PartOfTreeComponent;
 import org.terasology.gf.tree.lsystem.AdvanceAxionElementGeneration;
 import org.terasology.gf.tree.lsystem.AdvancedLSystemTreeDefinition;
 import org.terasology.gf.tree.lsystem.AxionElementGeneration;
@@ -34,7 +35,6 @@ import org.terasology.world.ChunkView;
 import org.terasology.world.WorldProvider;
 import org.terasology.world.generator.plugin.RegisterPlugin;
 
-import java.util.Arrays;
 import java.util.Map;
 
 @RegisterPlugin
@@ -88,11 +88,11 @@ public class MapleGrowthDefinition implements PlantGrowthDefinition {
         replacementMap.put('T', trunk);
         replacementMap.put('b', smallBranch);
 
-        TreeBlockDefinition mapleSapling = new TreeBlockDefinition("PlantPack:MapleSapling");
-        TreeBlockDefinition mapleSaplingGenerated = new TreeBlockDefinition(GENERATED_BLOCK);
-        TreeBlockDefinition greenLeaf = new TreeBlockDefinition("PlantPack:MapleLeaf");
-        TreeBlockDefinition mapleTrunk = new TreeBlockDefinition("PlantPack:MapleTrunk");
-        TreeBlockDefinition mapleBranch = new TreeBlockDefinition("PlantPack:MapleBranch", true);
+        TreeBlockDefinition mapleSapling = new TreeBlockDefinition("PlantPack:MapleSapling", PartOfTreeComponent.Part.SAPLING);
+        TreeBlockDefinition mapleSaplingGenerated = new TreeBlockDefinition(GENERATED_BLOCK, PartOfTreeComponent.Part.SAPLING);
+        TreeBlockDefinition greenLeaf = new TreeBlockDefinition("PlantPack:MapleLeaf", PartOfTreeComponent.Part.LEAF);
+        TreeBlockDefinition mapleTrunk = new TreeBlockDefinition("PlantPack:MapleTrunk", PartOfTreeComponent.Part.TRUNK);
+        TreeBlockDefinition mapleBranch = new TreeBlockDefinition("PlantPack:MapleBranch", PartOfTreeComponent.Part.BRANCH);
 
         float trunkAdvance = 0.3f;
         float branchAdvance = 0.2f;
@@ -116,7 +116,7 @@ public class MapleGrowthDefinition implements PlantGrowthDefinition {
         blockMap.put('B', largeBranchGeneration);
         blockMap.put('M', new AdvanceAxionElementGeneration(branchAdvance));
 
-        treeDefinition = new AdvancedLSystemTreeDefinition(ID, "g", replacementMap, blockMap, Arrays.asList(mapleTrunk, mapleBranch, greenLeaf), 1.5f);
+        treeDefinition = new AdvancedLSystemTreeDefinition(ID, "g", replacementMap, blockMap, 1.5f);
     }
 
     @Override
