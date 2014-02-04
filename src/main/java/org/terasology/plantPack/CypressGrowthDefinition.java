@@ -58,7 +58,7 @@ public class CypressGrowthDefinition implements PlantGrowthDefinition {
                     @Override
                     public String generateReplacement(String currentAxion) {
                         // 137.5 degrees is a golden ratio
-                        int deg = rnd.nextInt(135, 145);
+                        int deg = rnd.nextInt(132, 143);
                         return "N+(" + deg + ")[&Mb]Wt";
                     }
                 });

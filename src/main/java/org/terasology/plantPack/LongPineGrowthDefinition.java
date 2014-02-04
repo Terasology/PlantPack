@@ -44,6 +44,7 @@ public class LongPineGrowthDefinition implements PlantGrowthDefinition {
 
     private AdvancedLSystemTreeDefinition treeDefinition;
 
+    //TODO Make this look like real norther hemisphere pine
     public LongPineGrowthDefinition() {
         Map<Character, AxionElementReplacement> replacementMap = Maps.newHashMap();
 
@@ -58,7 +59,7 @@ public class LongPineGrowthDefinition implements PlantGrowthDefinition {
                     @Override
                     public String generateReplacement(String currentAxion) {
                         // 137.5 degrees is a golden ratio
-                        int deg = rnd.nextInt(130, 147);
+                        int deg = rnd.nextInt(100, 177);
                         return "N+(" + deg + ")[&Mb]Wt";
                     }
                 });
@@ -67,9 +68,9 @@ public class LongPineGrowthDefinition implements PlantGrowthDefinition {
                     @Override
                     public String generateReplacement(String currentAxion) {
                         // Always generate at least 2 branches
-                        if (currentAxion.split("b").length < 2) {
+                        if (currentAxion.split("b").length < 8) {
                             // 137.5 degrees is a golden ratio
-                            int deg = rnd.nextInt(130, 147);
+                            int deg = rnd.nextInt(100, 177);
                             return "N+(" + deg + ")[&Mb]Wt";
                         }
                         return "NWt";
@@ -94,8 +95,8 @@ public class LongPineGrowthDefinition implements PlantGrowthDefinition {
         TreeBlockDefinition pineTrunk = new TreeBlockDefinition("PlantPack:LongPineTrunk");
         TreeBlockDefinition pineBranch = new TreeBlockDefinition("PlantPack:LongPineBranch", true);
 
-        float trunkAdvance = 0.3f;
-        float branchAdvance = 0.15f;
+        float trunkAdvance = 0.5f;
+        float branchAdvance = 0.45f;
 
         Map<Character, AxionElementGeneration> blockMap = Maps.newHashMap();
         blockMap.put('s', new DefaultAxionElementGeneration(pineSapling, trunkAdvance));
@@ -109,9 +110,9 @@ public class LongPineGrowthDefinition implements PlantGrowthDefinition {
 
         // Branch building blocks
         SurroundAxionElementGeneration smallBranchGeneration = new SurroundAxionElementGeneration(greenLeaf, greenLeaf, branchAdvance, 1.4f);
-        smallBranchGeneration.setMaxZ(0);
+        smallBranchGeneration.setMaxZ(10);
         SurroundAxionElementGeneration largeBranchGeneration = new SurroundAxionElementGeneration(pineBranch, greenLeaf, branchAdvance, 0.8f, 1.8f);
-        largeBranchGeneration.setMaxZ(0);
+        largeBranchGeneration.setMaxZ(10);
         blockMap.put('b', smallBranchGeneration);
         blockMap.put('B', largeBranchGeneration);
         blockMap.put('M', new AdvanceAxionElementGeneration(branchAdvance));

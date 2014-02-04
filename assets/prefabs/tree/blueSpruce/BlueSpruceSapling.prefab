@@ -1,0 +1,10 @@
+{
+    "LivingPlant": {
+        "type": "PlantPack:blueSpruce"
+    },
+    "LSystemTree": {
+        "axion": "s",
+        "generation": 1
+    },
+    "PartOfTree": {}
+}

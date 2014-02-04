@@ -58,7 +58,7 @@ public class MapleGrowthDefinition implements PlantGrowthDefinition {
                     @Override
                     public String generateReplacement(String currentAxion) {
                         // 137.5 degrees is a golden ratio
-                        int deg = rnd.nextInt(130, 147);
+                        int deg = rnd.nextInt(125, 152);
                         return "+(" + deg + ")[&Mb]Wt";
                     }
                 });

@@ -94,8 +94,8 @@ public class SpruceGrowthDefinition implements PlantGrowthDefinition {
         TreeBlockDefinition spruceTrunk = new TreeBlockDefinition("PlantPack:SpruceTrunk");
         TreeBlockDefinition spruceBranch = new TreeBlockDefinition("PlantPack:SpruceBranch", true);
 
-        float trunkAdvance = 0.3f;
-        float branchAdvance = 0.15f;
+        float trunkAdvance = 0.4f;
+        float branchAdvance = 0.2f;
 
         Map<Character, AxionElementGeneration> blockMap = Maps.newHashMap();
         blockMap.put('s', new DefaultAxionElementGeneration(spruceSapling, trunkAdvance));
