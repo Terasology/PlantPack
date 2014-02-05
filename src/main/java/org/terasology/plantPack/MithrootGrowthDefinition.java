@@ -89,7 +89,7 @@ public class MithrootGrowthDefinition extends LSystemBasedTreeGrowthDefinition {
         TreeBlockDefinition mithrootBranch = new TreeBlockDefinition("PlantPack:MithrootBranch", PartOfTreeComponent.Part.BRANCH);
 
         float trunkAdvance = 0.3f;
-        float branchAdvance = 0.8f;
+        float branchAdvance = 0.5f;
 
         Map<Character, AxionElementGeneration> blockMap = Maps.newHashMap();
         blockMap.put('s', new DefaultAxionElementGeneration(mithrootSapling, trunkAdvance));

@@ -89,7 +89,7 @@ public class GrandMapleGrowthDefinition extends LSystemBasedTreeGrowthDefinition
         TreeBlockDefinition grandMapleBranch = new TreeBlockDefinition("PlantPack:GrandMapleBranch", PartOfTreeComponent.Part.BRANCH);
 
         float trunkAdvance = 0.4f;
-        float branchAdvance = 0.6f;
+        float branchAdvance = 0.5f;
 
         Map<Character, AxionElementGeneration> blockMap = Maps.newHashMap();
         blockMap.put('s', new DefaultAxionElementGeneration(grandMapleSapling, trunkAdvance));
