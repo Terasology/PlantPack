@@ -16,29 +16,23 @@
 package org.terasology.plantPack;
 
 import com.google.common.collect.Maps;
-import org.terasology.anotherWorld.GenerationParameters;
-import org.terasology.entitySystem.entity.EntityRef;
-import org.terasology.gf.generator.PlantGrowthDefinition;
 import org.terasology.gf.tree.PartOfTreeComponent;
 import org.terasology.gf.tree.lsystem.AdvanceAxionElementGeneration;
 import org.terasology.gf.tree.lsystem.AdvancedLSystemTreeDefinition;
 import org.terasology.gf.tree.lsystem.AxionElementGeneration;
 import org.terasology.gf.tree.lsystem.AxionElementReplacement;
 import org.terasology.gf.tree.lsystem.DefaultAxionElementGeneration;
+import org.terasology.gf.tree.lsystem.LSystemBasedTreeGrowthDefinition;
 import org.terasology.gf.tree.lsystem.SimpleAxionElementReplacement;
 import org.terasology.gf.tree.lsystem.SurroundAxionElementGeneration;
 import org.terasology.gf.tree.lsystem.TreeBlockDefinition;
-import org.terasology.math.Vector3i;
 import org.terasology.utilities.random.FastRandom;
-import org.terasology.world.BlockEntityRegistry;
-import org.terasology.world.ChunkView;
-import org.terasology.world.WorldProvider;
 import org.terasology.world.generator.plugin.RegisterPlugin;
 
 import java.util.Map;
 
 @RegisterPlugin
-public class BroomGrowthDefinition implements PlantGrowthDefinition {
+public class BroomGrowthDefinition extends LSystemBasedTreeGrowthDefinition {
     public static final String ID = "PlantPack:broom";
     public static final String GENERATED_BLOCK = "PlantPack:BroomSaplingGenerated";
 
@@ -125,17 +119,12 @@ public class BroomGrowthDefinition implements PlantGrowthDefinition {
     }
 
     @Override
-    public void generatePlant(String seed, Vector3i chunkPos, ChunkView chunkView, int x, int y, int z, GenerationParameters generationParameters) {
-        treeDefinition.generateTree(seed, GENERATED_BLOCK, chunkPos, chunkView, x, y, z);
+    protected String getGeneratedBlock() {
+        return GENERATED_BLOCK;
     }
 
     @Override
-    public boolean initializePlant(WorldProvider worldProvider, BlockEntityRegistry blockEntityRegistry, EntityRef plant) {
-        return treeDefinition.setupTreeBaseBlock(worldProvider, blockEntityRegistry, plant);
-    }
-
-    @Override
-    public void updatePlant(WorldProvider worldProvider, BlockEntityRegistry blockEntityRegistry, EntityRef treeRef) {
-        treeDefinition.updateTree(worldProvider, blockEntityRegistry, treeRef);
+    protected AdvancedLSystemTreeDefinition getTreeDefinition() {
+        return treeDefinition;
     }
 }
