@@ -26,7 +26,7 @@ import org.terasology.gf.tree.lsystem.LSystemBasedTreeGrowthDefinition;
 import org.terasology.gf.tree.lsystem.SimpleAxionElementReplacement;
 import org.terasology.gf.tree.lsystem.SurroundAxionElementGeneration;
 import org.terasology.gf.tree.lsystem.TreeBlockDefinition;
-import org.terasology.utilities.random.FastRandom;
+import org.terasology.utilities.random.Random;
 import org.terasology.world.generator.plugin.RegisterPlugin;
 
 import java.util.Map;
@@ -44,13 +44,11 @@ public class SpruceGrowthDefinition extends LSystemBasedTreeGrowthDefinition {
         SimpleAxionElementReplacement sapling = new SimpleAxionElementReplacement("s");
         sapling.addReplacement(1f, "Tt");
 
-        final FastRandom rnd = new FastRandom();
-
         SimpleAxionElementReplacement trunkTop = new SimpleAxionElementReplacement("t");
         trunkTop.addReplacement(0.6f,
                 new SimpleAxionElementReplacement.ReplacementGenerator() {
                     @Override
-                    public String generateReplacement(String currentAxion) {
+                    public String generateReplacement(Random rnd, String currentAxion) {
                         // 137.5 degrees is a golden ratio
                         int deg = rnd.nextInt(130, 147);
                         return "N+(" + deg + ")[&Mb]Wt";
@@ -59,7 +57,7 @@ public class SpruceGrowthDefinition extends LSystemBasedTreeGrowthDefinition {
         trunkTop.addReplacement(0.4f,
                 new SimpleAxionElementReplacement.ReplacementGenerator() {
                     @Override
-                    public String generateReplacement(String currentAxion) {
+                    public String generateReplacement(Random rnd, String currentAxion) {
                         // Always generate at least 2 branches
                         if (currentAxion.split("b").length < 2) {
                             // 137.5 degrees is a golden ratio
