@@ -6,5 +6,7 @@
         "axion": "s",
         "generation": 1
     },
-    "PartOfTree": {}
+    "PartOfTree": {
+        "part": "SAPLING"
+    }
 }

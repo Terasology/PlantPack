@@ -5,5 +5,8 @@
     "LSystemTree": {
         "axion": "s",
         "generation": 1
+    },
+    "PartOfTree": {
+        "part": "SAPLING"
     }
 }
