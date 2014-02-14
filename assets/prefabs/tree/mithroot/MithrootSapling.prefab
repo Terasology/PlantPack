@@ -2,10 +2,7 @@
     "LivingPlant": {
         "type": "PlantPack:mithroot"
     },
-    "LSystemTree": {
-        "axion": "s",
-        "generation": 1
-    },
+    "PlantedSapling": { },
     "PartOfTree": {
         "part": "SAPLING"
     }

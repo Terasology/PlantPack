@@ -2,10 +2,7 @@
     "LivingPlant": {
         "type": "PlantPack:spruce"
     },
-    "LSystemTree": {
-        "axion": "s",
-        "generation": 1
-    },
+    "PlantedSapling": { },
     "PartOfTree": {
         "part": "SAPLING"
     }
