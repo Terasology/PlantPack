@@ -2,8 +2,7 @@
     "LivingPlant": {
         "type": "PlantPack:corn"
     },
-    "GrownCrop": {
-        "type": "corn",
-        "saplingBlock": "PlantPack:Corn1"
+    "BlockDropGrammar": {
+        "itemDrops": ["3-5*PlantPack:CornFruit"]
     }
 }

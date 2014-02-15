@@ -1,6 +1,6 @@
 {
     "LivingPlant": {
-        "type": "PlantPack:corn"
+        "type": "PlantPack:rice"
     },
     "BlockDropGrammar": {}
 }
