@@ -1,0 +1,9 @@
+{
+    "LivingPlant": {
+        "type": "PlantPack:corn"
+    },
+    "GrownCrop": {
+        "type": "corn",
+        "saplingBlock": "PlantPack:Corn1"
+    }
+}

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ *  http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.terasology.plantPack;
+package org.terasology.plantPack.tree;
 
 import com.google.common.collect.Maps;
 import org.terasology.gf.tree.PartOfTreeComponent;
@@ -32,13 +32,13 @@ import org.terasology.world.generator.plugin.RegisterPlugin;
 import java.util.Map;
 
 @RegisterPlugin
-public class BroomGrowthDefinition extends LSystemBasedTreeGrowthDefinition {
-    public static final String ID = "PlantPack:broom";
-    public static final String GENERATED_BLOCK = "PlantPack:BroomSaplingGenerated";
+public class OakGrowthDefinition extends LSystemBasedTreeGrowthDefinition {
+    public static final String ID = "PlantPack:oak";
+    public static final String GENERATED_BLOCK = "PlantPack:OakSaplingGenerated";
 
     private AdvancedLSystemTreeDefinition treeDefinition;
 
-    public BroomGrowthDefinition() {
+    public OakGrowthDefinition() {
         Map<Character, AxionElementReplacement> replacementMap = Maps.newHashMap();
 
         SimpleAxionElementReplacement sapling = new SimpleAxionElementReplacement("s");
@@ -80,29 +80,29 @@ public class BroomGrowthDefinition extends LSystemBasedTreeGrowthDefinition {
         replacementMap.put('T', trunk);
         replacementMap.put('b', smallBranch);
 
-        TreeBlockDefinition broomSapling = new TreeBlockDefinition("PlantPack:BroomSapling", PartOfTreeComponent.Part.SAPLING);
-        TreeBlockDefinition broomSaplingGenerated = new TreeBlockDefinition(GENERATED_BLOCK, PartOfTreeComponent.Part.SAPLING);
-        TreeBlockDefinition greenLeaf = new TreeBlockDefinition("PlantPack:BroomLeaf", PartOfTreeComponent.Part.LEAF);
-        TreeBlockDefinition broomTrunk = new TreeBlockDefinition("PlantPack:BroomTrunk", PartOfTreeComponent.Part.TRUNK);
-        TreeBlockDefinition broomBranch = new TreeBlockDefinition("PlantPack:BroomBranch", PartOfTreeComponent.Part.BRANCH);
+        TreeBlockDefinition oakSapling = new TreeBlockDefinition("PlantPack:OakSapling", PartOfTreeComponent.Part.SAPLING);
+        TreeBlockDefinition oakSaplingGenerated = new TreeBlockDefinition(GENERATED_BLOCK, PartOfTreeComponent.Part.SAPLING);
+        TreeBlockDefinition greenLeaf = new TreeBlockDefinition("PlantPack:OakLeaf", PartOfTreeComponent.Part.LEAF);
+        TreeBlockDefinition oakTrunk = new TreeBlockDefinition("PlantPack:OakTrunk", PartOfTreeComponent.Part.TRUNK);
+        TreeBlockDefinition oakBranch = new TreeBlockDefinition("PlantPack:OakBranch", PartOfTreeComponent.Part.BRANCH);
 
-        float trunkAdvance = 0.08f;
-        float branchAdvance = 0.1f;
+        float trunkAdvance = 0.3f;
+        float branchAdvance = 0.2f;
 
         Map<Character, AxionElementGeneration> blockMap = Maps.newHashMap();
-        blockMap.put('s', new DefaultAxionElementGeneration(broomSapling, trunkAdvance));
-        blockMap.put('g', new DefaultAxionElementGeneration(broomSaplingGenerated, trunkAdvance));
+        blockMap.put('s', new DefaultAxionElementGeneration(oakSapling, trunkAdvance));
+        blockMap.put('g', new DefaultAxionElementGeneration(oakSaplingGenerated, trunkAdvance));
 
         // Trunk building blocks
         blockMap.put('t', new SurroundAxionElementGeneration(greenLeaf, greenLeaf, trunkAdvance, 2f));
-        blockMap.put('T', new DefaultAxionElementGeneration(broomTrunk, trunkAdvance));
-        blockMap.put('N', new DefaultAxionElementGeneration(broomTrunk, trunkAdvance));
-        blockMap.put('W', new SurroundAxionElementGeneration(broomBranch, greenLeaf, trunkAdvance, 2f));
+        blockMap.put('T', new DefaultAxionElementGeneration(oakTrunk, trunkAdvance));
+        blockMap.put('N', new DefaultAxionElementGeneration(oakTrunk, trunkAdvance));
+        blockMap.put('W', new SurroundAxionElementGeneration(oakBranch, greenLeaf, trunkAdvance, 2f));
 
         // Branch building blocks
         SurroundAxionElementGeneration smallBranchGeneration = new SurroundAxionElementGeneration(greenLeaf, greenLeaf, branchAdvance, 2.6f);
         smallBranchGeneration.setMaxZ(0);
-        SurroundAxionElementGeneration largeBranchGeneration = new SurroundAxionElementGeneration(broomBranch, greenLeaf, branchAdvance, 1.1f, 3.5f);
+        SurroundAxionElementGeneration largeBranchGeneration = new SurroundAxionElementGeneration(oakBranch, greenLeaf, branchAdvance, 1.1f, 3.5f);
         largeBranchGeneration.setMaxZ(0);
         blockMap.put('b', smallBranchGeneration);
         blockMap.put('B', largeBranchGeneration);

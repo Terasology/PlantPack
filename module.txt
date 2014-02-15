@@ -12,6 +12,10 @@
             {
                 "id" : "GrowingFlora",
                 "minVersion" : "0.1.0"
+            },
+            {
+                "id" : "Crops",
+                "minVersion" : "0.1.0"
             }],
     "isServerSideOnly" : false
 }

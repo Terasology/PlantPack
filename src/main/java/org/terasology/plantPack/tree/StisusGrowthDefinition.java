@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *  http://www.apache.org/licenses/LICENSE-2.0
+ *      http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.terasology.plantPack;
+package org.terasology.plantPack.tree;
 
 import com.google.common.collect.Maps;
 import org.terasology.gf.tree.PartOfTreeComponent;
@@ -32,13 +32,13 @@ import org.terasology.world.generator.plugin.RegisterPlugin;
 import java.util.Map;
 
 @RegisterPlugin
-public class PineGrowthDefinition extends LSystemBasedTreeGrowthDefinition {
-    public static final String ID = "PlantPack:pine";
-    public static final String GENERATED_BLOCK = "PlantPack:PineSaplingGenerated";
+public class StisusGrowthDefinition extends LSystemBasedTreeGrowthDefinition {
+    public static final String ID = "PlantPack:stisus";
+    public static final String GENERATED_BLOCK = "PlantPack:StisusSaplingGenerated";
 
     private AdvancedLSystemTreeDefinition treeDefinition;
 
-    public PineGrowthDefinition() {
+    public StisusGrowthDefinition() {
         Map<Character, AxionElementReplacement> replacementMap = Maps.newHashMap();
 
         SimpleAxionElementReplacement sapling = new SimpleAxionElementReplacement("s");
@@ -50,8 +50,8 @@ public class PineGrowthDefinition extends LSystemBasedTreeGrowthDefinition {
                     @Override
                     public String generateReplacement(Random rnd, String currentAxion) {
                         // 137.5 degrees is a golden ratio
-                        int deg = rnd.nextInt(130, 147);
-                        return "N+(" + deg + ")[&Mb]Wt";
+                        int deg = rnd.nextInt(120, 157);
+                        return "+(" + deg + ")[&Mb]Wt";
                     }
                 });
         trunkTop.addReplacement(0.4f,
@@ -61,10 +61,10 @@ public class PineGrowthDefinition extends LSystemBasedTreeGrowthDefinition {
                         // Always generate at least 2 branches
                         if (currentAxion.split("b").length < 2) {
                             // 137.5 degrees is a golden ratio
-                            int deg = rnd.nextInt(130, 147);
-                            return "N+(" + deg + ")[&Mb]Wt";
+                            int deg = rnd.nextInt(120, 157);
+                            return "+(" + deg + ")[&Mb]Wt";
                         }
-                        return "NWt";
+                        return "Wt";
                     }
                 });
 
@@ -80,29 +80,29 @@ public class PineGrowthDefinition extends LSystemBasedTreeGrowthDefinition {
         replacementMap.put('T', trunk);
         replacementMap.put('b', smallBranch);
 
-        TreeBlockDefinition pineSapling = new TreeBlockDefinition("PlantPack:PineSapling", PartOfTreeComponent.Part.SAPLING);
-        TreeBlockDefinition pineSaplingGenerated = new TreeBlockDefinition(GENERATED_BLOCK, PartOfTreeComponent.Part.SAPLING);
-        TreeBlockDefinition greenLeaf = new TreeBlockDefinition("PlantPack:PineLeaf", PartOfTreeComponent.Part.LEAF);
-        TreeBlockDefinition pineTrunk = new TreeBlockDefinition("PlantPack:PineTrunk", PartOfTreeComponent.Part.TRUNK);
-        TreeBlockDefinition pineBranch = new TreeBlockDefinition("PlantPack:PineBranch", PartOfTreeComponent.Part.BRANCH);
+        TreeBlockDefinition stisusSapling = new TreeBlockDefinition("PlantPack:StisusSapling", PartOfTreeComponent.Part.SAPLING);
+        TreeBlockDefinition stisusSaplingGenerated = new TreeBlockDefinition(GENERATED_BLOCK, PartOfTreeComponent.Part.SAPLING);
+        TreeBlockDefinition greenLeaf = new TreeBlockDefinition("PlantPack:StisusLeaf", PartOfTreeComponent.Part.LEAF);
+        TreeBlockDefinition stisusTrunk = new TreeBlockDefinition("PlantPack:StisusTrunk", PartOfTreeComponent.Part.TRUNK);
+        TreeBlockDefinition stisusBranch = new TreeBlockDefinition("PlantPack:StisusBranch", PartOfTreeComponent.Part.BRANCH);
 
-        float trunkAdvance = 0.3f;
-        float branchAdvance = 0.15f;
+        float trunkAdvance = 0.8f;
+        float branchAdvance = 0.4f;
 
         Map<Character, AxionElementGeneration> blockMap = Maps.newHashMap();
-        blockMap.put('s', new DefaultAxionElementGeneration(pineSapling, trunkAdvance));
-        blockMap.put('g', new DefaultAxionElementGeneration(pineSaplingGenerated, trunkAdvance));
+        blockMap.put('s', new DefaultAxionElementGeneration(stisusSapling, trunkAdvance));
+        blockMap.put('g', new DefaultAxionElementGeneration(stisusSaplingGenerated, trunkAdvance));
 
         // Trunk building blocks
-        blockMap.put('t', new SurroundAxionElementGeneration(greenLeaf, greenLeaf, trunkAdvance, 1.2f));
-        blockMap.put('T', new DefaultAxionElementGeneration(pineTrunk, trunkAdvance));
-        blockMap.put('N', new DefaultAxionElementGeneration(pineTrunk, trunkAdvance));
-        blockMap.put('W', new SurroundAxionElementGeneration(pineBranch, greenLeaf, trunkAdvance, 1.2f));
+        blockMap.put('t', new SurroundAxionElementGeneration(greenLeaf, greenLeaf, trunkAdvance, 2f));
+        blockMap.put('T', new DefaultAxionElementGeneration(stisusTrunk, trunkAdvance));
+        blockMap.put('N', new DefaultAxionElementGeneration(stisusTrunk, trunkAdvance));
+        blockMap.put('W', new SurroundAxionElementGeneration(stisusBranch, greenLeaf, trunkAdvance, 2f));
 
         // Branch building blocks
-        SurroundAxionElementGeneration smallBranchGeneration = new SurroundAxionElementGeneration(greenLeaf, greenLeaf, branchAdvance, 1.4f);
+        SurroundAxionElementGeneration smallBranchGeneration = new SurroundAxionElementGeneration(greenLeaf, greenLeaf, branchAdvance, 2.6f);
         smallBranchGeneration.setMaxZ(0);
-        SurroundAxionElementGeneration largeBranchGeneration = new SurroundAxionElementGeneration(pineBranch, greenLeaf, branchAdvance, 0.8f, 1.8f);
+        SurroundAxionElementGeneration largeBranchGeneration = new SurroundAxionElementGeneration(stisusBranch, greenLeaf, branchAdvance, 1.1f, 3.5f);
         largeBranchGeneration.setMaxZ(0);
         blockMap.put('b', smallBranchGeneration);
         blockMap.put('B', largeBranchGeneration);

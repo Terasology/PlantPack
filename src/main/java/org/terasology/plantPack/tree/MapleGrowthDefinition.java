@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.terasology.plantPack;
+package org.terasology.plantPack.tree;
 
 import com.google.common.collect.Maps;
 import org.terasology.gf.tree.PartOfTreeComponent;
@@ -32,13 +32,13 @@ import org.terasology.world.generator.plugin.RegisterPlugin;
 import java.util.Map;
 
 @RegisterPlugin
-public class GrandMapleGrowthDefinition extends LSystemBasedTreeGrowthDefinition {
-    public static final String ID = "PlantPack:grandMaple";
-    public static final String GENERATED_BLOCK = "PlantPack:GrandMapleSaplingGenerated";
+public class MapleGrowthDefinition extends LSystemBasedTreeGrowthDefinition {
+    public static final String ID = "PlantPack:maple";
+    public static final String GENERATED_BLOCK = "PlantPack:MapleSaplingGenerated";
 
     private AdvancedLSystemTreeDefinition treeDefinition;
 
-    public GrandMapleGrowthDefinition() {
+    public MapleGrowthDefinition() {
         Map<Character, AxionElementReplacement> replacementMap = Maps.newHashMap();
 
         SimpleAxionElementReplacement sapling = new SimpleAxionElementReplacement("s");
@@ -50,7 +50,7 @@ public class GrandMapleGrowthDefinition extends LSystemBasedTreeGrowthDefinition
                     @Override
                     public String generateReplacement(Random rnd, String currentAxion) {
                         // 137.5 degrees is a golden ratio
-                        int deg = rnd.nextInt(105, 172);
+                        int deg = rnd.nextInt(125, 152);
                         return "+(" + deg + ")[&Mb]Wt";
                     }
                 });
@@ -80,29 +80,29 @@ public class GrandMapleGrowthDefinition extends LSystemBasedTreeGrowthDefinition
         replacementMap.put('T', trunk);
         replacementMap.put('b', smallBranch);
 
-        TreeBlockDefinition grandMapleSapling = new TreeBlockDefinition("PlantPack:GrandMapleSapling", PartOfTreeComponent.Part.SAPLING);
-        TreeBlockDefinition grandMapleSaplingGenerated = new TreeBlockDefinition(GENERATED_BLOCK, PartOfTreeComponent.Part.SAPLING);
-        TreeBlockDefinition greenLeaf = new TreeBlockDefinition("PlantPack:GrandMapleLeaf", PartOfTreeComponent.Part.LEAF);
-        TreeBlockDefinition grandMapleTrunk = new TreeBlockDefinition("PlantPack:GrandMapleTrunk", PartOfTreeComponent.Part.TRUNK);
-        TreeBlockDefinition grandMapleBranch = new TreeBlockDefinition("PlantPack:GrandMapleBranch", PartOfTreeComponent.Part.BRANCH);
+        TreeBlockDefinition mapleSapling = new TreeBlockDefinition("PlantPack:MapleSapling", PartOfTreeComponent.Part.SAPLING);
+        TreeBlockDefinition mapleSaplingGenerated = new TreeBlockDefinition(GENERATED_BLOCK, PartOfTreeComponent.Part.SAPLING);
+        TreeBlockDefinition greenLeaf = new TreeBlockDefinition("PlantPack:MapleLeaf", PartOfTreeComponent.Part.LEAF);
+        TreeBlockDefinition mapleTrunk = new TreeBlockDefinition("PlantPack:MapleTrunk", PartOfTreeComponent.Part.TRUNK);
+        TreeBlockDefinition mapleBranch = new TreeBlockDefinition("PlantPack:MapleBranch", PartOfTreeComponent.Part.BRANCH);
 
-        float trunkAdvance = 0.4f;
-        float branchAdvance = 0.5f;
+        float trunkAdvance = 0.3f;
+        float branchAdvance = 0.2f;
 
         Map<Character, AxionElementGeneration> blockMap = Maps.newHashMap();
-        blockMap.put('s', new DefaultAxionElementGeneration(grandMapleSapling, trunkAdvance));
-        blockMap.put('g', new DefaultAxionElementGeneration(grandMapleSaplingGenerated, trunkAdvance));
+        blockMap.put('s', new DefaultAxionElementGeneration(mapleSapling, trunkAdvance));
+        blockMap.put('g', new DefaultAxionElementGeneration(mapleSaplingGenerated, trunkAdvance));
 
         // Trunk building blocks
         blockMap.put('t', new SurroundAxionElementGeneration(greenLeaf, greenLeaf, trunkAdvance, 2f));
-        blockMap.put('T', new DefaultAxionElementGeneration(grandMapleTrunk, trunkAdvance));
-        blockMap.put('N', new DefaultAxionElementGeneration(grandMapleTrunk, trunkAdvance));
-        blockMap.put('W', new SurroundAxionElementGeneration(grandMapleBranch, greenLeaf, trunkAdvance, 2f));
+        blockMap.put('T', new DefaultAxionElementGeneration(mapleTrunk, trunkAdvance));
+        blockMap.put('N', new DefaultAxionElementGeneration(mapleTrunk, trunkAdvance));
+        blockMap.put('W', new SurroundAxionElementGeneration(mapleBranch, greenLeaf, trunkAdvance, 2f));
 
         // Branch building blocks
         SurroundAxionElementGeneration smallBranchGeneration = new SurroundAxionElementGeneration(greenLeaf, greenLeaf, branchAdvance, 2.6f);
         smallBranchGeneration.setMaxZ(0);
-        SurroundAxionElementGeneration largeBranchGeneration = new SurroundAxionElementGeneration(grandMapleBranch, greenLeaf, branchAdvance, 1.1f, 3.5f);
+        SurroundAxionElementGeneration largeBranchGeneration = new SurroundAxionElementGeneration(mapleBranch, greenLeaf, branchAdvance, 1.1f, 3.5f);
         largeBranchGeneration.setMaxZ(0);
         blockMap.put('b', smallBranchGeneration);
         blockMap.put('B', largeBranchGeneration);

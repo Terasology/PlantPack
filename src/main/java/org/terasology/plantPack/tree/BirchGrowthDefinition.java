@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.terasology.plantPack;
+package org.terasology.plantPack.tree;
 
 import com.google.common.collect.Maps;
 import org.terasology.gf.tree.PartOfTreeComponent;
@@ -32,13 +32,13 @@ import org.terasology.world.generator.plugin.RegisterPlugin;
 import java.util.Map;
 
 @RegisterPlugin
-public class BlueSpruceGrowthDefinition extends LSystemBasedTreeGrowthDefinition {
-    public static final String ID = "PlantPack:blueSpruce";
-    public static final String GENERATED_BLOCK = "PlantPack:BlueSpruceSaplingGenerated";
+public class BirchGrowthDefinition extends LSystemBasedTreeGrowthDefinition {
+    public static final String ID = "PlantPack:birch";
+    public static final String GENERATED_BLOCK = "PlantPack:BirchSaplingGenerated";
 
     private AdvancedLSystemTreeDefinition treeDefinition;
 
-    public BlueSpruceGrowthDefinition() {
+    public BirchGrowthDefinition() {
         Map<Character, AxionElementReplacement> replacementMap = Maps.newHashMap();
 
         SimpleAxionElementReplacement sapling = new SimpleAxionElementReplacement("s");
@@ -50,8 +50,8 @@ public class BlueSpruceGrowthDefinition extends LSystemBasedTreeGrowthDefinition
                     @Override
                     public String generateReplacement(Random rnd, String currentAxion) {
                         // 137.5 degrees is a golden ratio
-                        int deg = rnd.nextInt(130, 147);
-                        return "N+(" + deg + ")[&Mb]Wt";
+                        int deg = rnd.nextInt(120, 157);
+                        return "+(" + deg + ")[&Mb]Wt";
                     }
                 });
         trunkTop.addReplacement(0.4f,
@@ -62,9 +62,9 @@ public class BlueSpruceGrowthDefinition extends LSystemBasedTreeGrowthDefinition
                         if (currentAxion.split("b").length < 2) {
                             // 137.5 degrees is a golden ratio
                             int deg = rnd.nextInt(130, 147);
-                            return "N+(" + deg + ")[&Mb]Wt";
+                            return "+(" + deg + ")[&Mb]Wt";
                         }
-                        return "NWt";
+                        return "Wt";
                     }
                 });
 
@@ -80,29 +80,29 @@ public class BlueSpruceGrowthDefinition extends LSystemBasedTreeGrowthDefinition
         replacementMap.put('T', trunk);
         replacementMap.put('b', smallBranch);
 
-        TreeBlockDefinition blueSpruceSapling = new TreeBlockDefinition("PlantPack:BlueSpruceSapling", PartOfTreeComponent.Part.SAPLING);
-        TreeBlockDefinition blueSpruceSaplingGenerated = new TreeBlockDefinition(GENERATED_BLOCK, PartOfTreeComponent.Part.SAPLING);
-        TreeBlockDefinition greenLeaf = new TreeBlockDefinition("PlantPack:BlueSpruceLeaf", PartOfTreeComponent.Part.LEAF);
-        TreeBlockDefinition blueSpruceTrunk = new TreeBlockDefinition("PlantPack:BlueSpruceTrunk", PartOfTreeComponent.Part.TRUNK);
-        TreeBlockDefinition blueSpruceBranch = new TreeBlockDefinition("PlantPack:BlueSpruceBranch", PartOfTreeComponent.Part.BRANCH);
+        TreeBlockDefinition birchSapling = new TreeBlockDefinition("PlantPack:BirchSapling", PartOfTreeComponent.Part.SAPLING);
+        TreeBlockDefinition birchSaplingGenerated = new TreeBlockDefinition(GENERATED_BLOCK, PartOfTreeComponent.Part.SAPLING);
+        TreeBlockDefinition greenLeaf = new TreeBlockDefinition("PlantPack:BirchLeaf", PartOfTreeComponent.Part.LEAF);
+        TreeBlockDefinition birchTrunk = new TreeBlockDefinition("PlantPack:BirchTrunk", PartOfTreeComponent.Part.TRUNK);
+        TreeBlockDefinition birchBranch = new TreeBlockDefinition("PlantPack:BirchBranch", PartOfTreeComponent.Part.BRANCH);
 
-        float trunkAdvance = 0.2f;
+        float trunkAdvance = 0.6f;
         float branchAdvance = 0.1f;
 
         Map<Character, AxionElementGeneration> blockMap = Maps.newHashMap();
-        blockMap.put('s', new DefaultAxionElementGeneration(blueSpruceSapling, trunkAdvance));
-        blockMap.put('g', new DefaultAxionElementGeneration(blueSpruceSaplingGenerated, trunkAdvance));
+        blockMap.put('s', new DefaultAxionElementGeneration(birchSapling, trunkAdvance));
+        blockMap.put('g', new DefaultAxionElementGeneration(birchSaplingGenerated, trunkAdvance));
 
         // Trunk building blocks
-        blockMap.put('t', new SurroundAxionElementGeneration(greenLeaf, greenLeaf, trunkAdvance, 1.2f));
-        blockMap.put('T', new DefaultAxionElementGeneration(blueSpruceTrunk, trunkAdvance));
-        blockMap.put('N', new DefaultAxionElementGeneration(blueSpruceTrunk, trunkAdvance));
-        blockMap.put('W', new SurroundAxionElementGeneration(blueSpruceBranch, greenLeaf, trunkAdvance, 1.2f));
+        blockMap.put('t', new SurroundAxionElementGeneration(greenLeaf, greenLeaf, trunkAdvance, 2f));
+        blockMap.put('T', new DefaultAxionElementGeneration(birchTrunk, trunkAdvance));
+        blockMap.put('N', new DefaultAxionElementGeneration(birchTrunk, trunkAdvance));
+        blockMap.put('W', new SurroundAxionElementGeneration(birchBranch, greenLeaf, trunkAdvance, 2f));
 
         // Branch building blocks
-        SurroundAxionElementGeneration smallBranchGeneration = new SurroundAxionElementGeneration(greenLeaf, greenLeaf, branchAdvance, 1.4f);
+        SurroundAxionElementGeneration smallBranchGeneration = new SurroundAxionElementGeneration(greenLeaf, greenLeaf, branchAdvance, 2.6f);
         smallBranchGeneration.setMaxZ(0);
-        SurroundAxionElementGeneration largeBranchGeneration = new SurroundAxionElementGeneration(blueSpruceBranch, greenLeaf, branchAdvance, 0.8f, 1.8f);
+        SurroundAxionElementGeneration largeBranchGeneration = new SurroundAxionElementGeneration(birchBranch, greenLeaf, branchAdvance, 1.1f, 3.5f);
         largeBranchGeneration.setMaxZ(0);
         blockMap.put('b', smallBranchGeneration);
         blockMap.put('B', largeBranchGeneration);

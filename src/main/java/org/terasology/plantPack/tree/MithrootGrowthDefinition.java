@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.terasology.plantPack;
+package org.terasology.plantPack.tree;
 
 import com.google.common.collect.Maps;
 import org.terasology.gf.tree.PartOfTreeComponent;
@@ -32,13 +32,13 @@ import org.terasology.world.generator.plugin.RegisterPlugin;
 import java.util.Map;
 
 @RegisterPlugin
-public class BirchGrowthDefinition extends LSystemBasedTreeGrowthDefinition {
-    public static final String ID = "PlantPack:birch";
-    public static final String GENERATED_BLOCK = "PlantPack:BirchSaplingGenerated";
+public class MithrootGrowthDefinition extends LSystemBasedTreeGrowthDefinition {
+    public static final String ID = "PlantPack:mithroot";
+    public static final String GENERATED_BLOCK = "PlantPack:MithrootSaplingGenerated";
 
     private AdvancedLSystemTreeDefinition treeDefinition;
 
-    public BirchGrowthDefinition() {
+    public MithrootGrowthDefinition() {
         Map<Character, AxionElementReplacement> replacementMap = Maps.newHashMap();
 
         SimpleAxionElementReplacement sapling = new SimpleAxionElementReplacement("s");
@@ -50,7 +50,7 @@ public class BirchGrowthDefinition extends LSystemBasedTreeGrowthDefinition {
                     @Override
                     public String generateReplacement(Random rnd, String currentAxion) {
                         // 137.5 degrees is a golden ratio
-                        int deg = rnd.nextInt(120, 157);
+                        int deg = rnd.nextInt(105, 172);
                         return "+(" + deg + ")[&Mb]Wt";
                     }
                 });
@@ -80,29 +80,29 @@ public class BirchGrowthDefinition extends LSystemBasedTreeGrowthDefinition {
         replacementMap.put('T', trunk);
         replacementMap.put('b', smallBranch);
 
-        TreeBlockDefinition birchSapling = new TreeBlockDefinition("PlantPack:BirchSapling", PartOfTreeComponent.Part.SAPLING);
-        TreeBlockDefinition birchSaplingGenerated = new TreeBlockDefinition(GENERATED_BLOCK, PartOfTreeComponent.Part.SAPLING);
-        TreeBlockDefinition greenLeaf = new TreeBlockDefinition("PlantPack:BirchLeaf", PartOfTreeComponent.Part.LEAF);
-        TreeBlockDefinition birchTrunk = new TreeBlockDefinition("PlantPack:BirchTrunk", PartOfTreeComponent.Part.TRUNK);
-        TreeBlockDefinition birchBranch = new TreeBlockDefinition("PlantPack:BirchBranch", PartOfTreeComponent.Part.BRANCH);
+        TreeBlockDefinition mithrootSapling = new TreeBlockDefinition("PlantPack:MithrootSapling", PartOfTreeComponent.Part.SAPLING);
+        TreeBlockDefinition mithrootSaplingGenerated = new TreeBlockDefinition(GENERATED_BLOCK, PartOfTreeComponent.Part.SAPLING);
+        TreeBlockDefinition greenLeaf = new TreeBlockDefinition("PlantPack:MithrootLeaf", PartOfTreeComponent.Part.LEAF);
+        TreeBlockDefinition mithrootTrunk = new TreeBlockDefinition("PlantPack:MithrootTrunk", PartOfTreeComponent.Part.TRUNK);
+        TreeBlockDefinition mithrootBranch = new TreeBlockDefinition("PlantPack:MithrootBranch", PartOfTreeComponent.Part.BRANCH);
 
-        float trunkAdvance = 0.6f;
-        float branchAdvance = 0.1f;
+        float trunkAdvance = 0.3f;
+        float branchAdvance = 0.5f;
 
         Map<Character, AxionElementGeneration> blockMap = Maps.newHashMap();
-        blockMap.put('s', new DefaultAxionElementGeneration(birchSapling, trunkAdvance));
-        blockMap.put('g', new DefaultAxionElementGeneration(birchSaplingGenerated, trunkAdvance));
+        blockMap.put('s', new DefaultAxionElementGeneration(mithrootSapling, trunkAdvance));
+        blockMap.put('g', new DefaultAxionElementGeneration(mithrootSaplingGenerated, trunkAdvance));
 
         // Trunk building blocks
         blockMap.put('t', new SurroundAxionElementGeneration(greenLeaf, greenLeaf, trunkAdvance, 2f));
-        blockMap.put('T', new DefaultAxionElementGeneration(birchTrunk, trunkAdvance));
-        blockMap.put('N', new DefaultAxionElementGeneration(birchTrunk, trunkAdvance));
-        blockMap.put('W', new SurroundAxionElementGeneration(birchBranch, greenLeaf, trunkAdvance, 2f));
+        blockMap.put('T', new DefaultAxionElementGeneration(mithrootTrunk, trunkAdvance));
+        blockMap.put('N', new DefaultAxionElementGeneration(mithrootTrunk, trunkAdvance));
+        blockMap.put('W', new SurroundAxionElementGeneration(mithrootBranch, greenLeaf, trunkAdvance, 2f));
 
         // Branch building blocks
         SurroundAxionElementGeneration smallBranchGeneration = new SurroundAxionElementGeneration(greenLeaf, greenLeaf, branchAdvance, 2.6f);
         smallBranchGeneration.setMaxZ(0);
-        SurroundAxionElementGeneration largeBranchGeneration = new SurroundAxionElementGeneration(birchBranch, greenLeaf, branchAdvance, 1.1f, 3.5f);
+        SurroundAxionElementGeneration largeBranchGeneration = new SurroundAxionElementGeneration(mithrootBranch, greenLeaf, branchAdvance, 1.1f, 3.5f);
         largeBranchGeneration.setMaxZ(0);
         blockMap.put('b', smallBranchGeneration);
         blockMap.put('B', largeBranchGeneration);

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.terasology.plantPack;
+package org.terasology.plantPack.tree;
 
 import com.google.common.collect.Maps;
 import org.terasology.gf.tree.PartOfTreeComponent;
@@ -32,13 +32,14 @@ import org.terasology.world.generator.plugin.RegisterPlugin;
 import java.util.Map;
 
 @RegisterPlugin
-public class CypressGrowthDefinition extends LSystemBasedTreeGrowthDefinition {
-    public static final String ID = "PlantPack:cypress";
-    public static final String GENERATED_BLOCK = "PlantPack:CypressSaplingGenerated";
+public class LongPineGrowthDefinition extends LSystemBasedTreeGrowthDefinition {
+    public static final String ID = "PlantPack:longPine";
+    public static final String GENERATED_BLOCK = "PlantPack:LongPineSaplingGenerated";
 
     private AdvancedLSystemTreeDefinition treeDefinition;
 
-    public CypressGrowthDefinition() {
+    //TODO Make this look like real norther hemisphere pine
+    public LongPineGrowthDefinition() {
         Map<Character, AxionElementReplacement> replacementMap = Maps.newHashMap();
 
         SimpleAxionElementReplacement sapling = new SimpleAxionElementReplacement("s");
@@ -50,7 +51,7 @@ public class CypressGrowthDefinition extends LSystemBasedTreeGrowthDefinition {
                     @Override
                     public String generateReplacement(Random rnd, String currentAxion) {
                         // 137.5 degrees is a golden ratio
-                        int deg = rnd.nextInt(132, 143);
+                        int deg = rnd.nextInt(100, 177);
                         return "N+(" + deg + ")[&Mb]Wt";
                     }
                 });
@@ -59,9 +60,9 @@ public class CypressGrowthDefinition extends LSystemBasedTreeGrowthDefinition {
                     @Override
                     public String generateReplacement(Random rnd, String currentAxion) {
                         // Always generate at least 2 branches
-                        if (currentAxion.split("b").length < 1) {
+                        if (currentAxion.split("b").length < 8) {
                             // 137.5 degrees is a golden ratio
-                            int deg = rnd.nextInt(135, 145);
+                            int deg = rnd.nextInt(100, 177);
                             return "N+(" + deg + ")[&Mb]Wt";
                         }
                         return "NWt";
@@ -80,30 +81,30 @@ public class CypressGrowthDefinition extends LSystemBasedTreeGrowthDefinition {
         replacementMap.put('T', trunk);
         replacementMap.put('b', smallBranch);
 
-        TreeBlockDefinition cypressSapling = new TreeBlockDefinition("PlantPack:CypressSapling", PartOfTreeComponent.Part.SAPLING);
-        TreeBlockDefinition cypressSaplingGenerated = new TreeBlockDefinition(GENERATED_BLOCK, PartOfTreeComponent.Part.SAPLING);
-        TreeBlockDefinition greenLeaf = new TreeBlockDefinition("PlantPack:CypressLeaf", PartOfTreeComponent.Part.LEAF);
-        TreeBlockDefinition cypressTrunk = new TreeBlockDefinition("PlantPack:CypressTrunk", PartOfTreeComponent.Part.TRUNK);
-        TreeBlockDefinition cypressBranch = new TreeBlockDefinition("PlantPack:CypressBranch", PartOfTreeComponent.Part.BRANCH);
+        TreeBlockDefinition pineSapling = new TreeBlockDefinition("PlantPack:LongPineSapling", PartOfTreeComponent.Part.SAPLING);
+        TreeBlockDefinition pineSaplingGenerated = new TreeBlockDefinition(GENERATED_BLOCK, PartOfTreeComponent.Part.SAPLING);
+        TreeBlockDefinition greenLeaf = new TreeBlockDefinition("PlantPack:LongPineLeaf", PartOfTreeComponent.Part.LEAF);
+        TreeBlockDefinition pineTrunk = new TreeBlockDefinition("PlantPack:LongPineTrunk", PartOfTreeComponent.Part.TRUNK);
+        TreeBlockDefinition pineBranch = new TreeBlockDefinition("PlantPack:LongPineBranch", PartOfTreeComponent.Part.BRANCH);
 
-        float trunkAdvance = 0.4f;
-        float branchAdvance = 0.25f;
+        float trunkAdvance = 0.5f;
+        float branchAdvance = 0.45f;
 
         Map<Character, AxionElementGeneration> blockMap = Maps.newHashMap();
-        blockMap.put('s', new DefaultAxionElementGeneration(cypressSapling, trunkAdvance));
-        blockMap.put('g', new DefaultAxionElementGeneration(cypressSaplingGenerated, trunkAdvance));
+        blockMap.put('s', new DefaultAxionElementGeneration(pineSapling, trunkAdvance));
+        blockMap.put('g', new DefaultAxionElementGeneration(pineSaplingGenerated, trunkAdvance));
 
         // Trunk building blocks
         blockMap.put('t', new SurroundAxionElementGeneration(greenLeaf, greenLeaf, trunkAdvance, 1.2f));
-        blockMap.put('T', new DefaultAxionElementGeneration(cypressTrunk, trunkAdvance));
-        blockMap.put('N', new DefaultAxionElementGeneration(cypressTrunk, trunkAdvance));
-        blockMap.put('W', new SurroundAxionElementGeneration(cypressBranch, greenLeaf, trunkAdvance, 1.2f));
+        blockMap.put('T', new DefaultAxionElementGeneration(pineTrunk, trunkAdvance));
+        blockMap.put('N', new DefaultAxionElementGeneration(pineTrunk, trunkAdvance));
+        blockMap.put('W', new SurroundAxionElementGeneration(pineBranch, greenLeaf, trunkAdvance, 1.2f));
 
         // Branch building blocks
         SurroundAxionElementGeneration smallBranchGeneration = new SurroundAxionElementGeneration(greenLeaf, greenLeaf, branchAdvance, 1.4f);
-        smallBranchGeneration.setMaxZ(0);
-        SurroundAxionElementGeneration largeBranchGeneration = new SurroundAxionElementGeneration(cypressBranch, greenLeaf, branchAdvance, 0.8f, 1.8f);
-        largeBranchGeneration.setMaxZ(0);
+        smallBranchGeneration.setMaxZ(10);
+        SurroundAxionElementGeneration largeBranchGeneration = new SurroundAxionElementGeneration(pineBranch, greenLeaf, branchAdvance, 0.8f, 1.8f);
+        largeBranchGeneration.setMaxZ(10);
         blockMap.put('b', smallBranchGeneration);
         blockMap.put('B', largeBranchGeneration);
         blockMap.put('M', new AdvanceAxionElementGeneration(branchAdvance));
