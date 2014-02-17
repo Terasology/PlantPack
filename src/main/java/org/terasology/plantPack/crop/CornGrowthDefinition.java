@@ -3,7 +3,7 @@ package org.terasology.plantPack.crop;
 import com.google.common.base.Function;
 import com.google.common.base.Predicate;
 import org.terasology.anotherWorld.LocalParameters;
-import org.terasology.gf.crop.CropGrowthDefinition;
+import org.terasology.gf.grass.CropGrowthDefinition;
 import org.terasology.world.block.BlockUri;
 import org.terasology.world.generator.plugin.RegisterPlugin;
 
