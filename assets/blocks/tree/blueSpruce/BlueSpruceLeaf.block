@@ -19,6 +19,6 @@
     "debrisOnDestroy" : false,
     "waving" : true,
     "entity": {
-        "prefab": "GrowingFlora:TreeLeaf"
+        "prefab": "PlantPack:BlueSpruceLeaf"
     }
 }

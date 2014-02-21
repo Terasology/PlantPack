@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 {
-	"attachmentAllowed" : false,
+    "attachmentAllowed" : false,
     "hardness" : 1,
     "debrisOnDestroy" : false,
     "waving" : true,
     "shadowCasting" : false,
     "luminance" : 5,
     "entity": {
-        "prefab": "GrowingFlora:TreeLeaf"
+        "prefab": "PlantPack:MithrootLeaf"
     }
 }

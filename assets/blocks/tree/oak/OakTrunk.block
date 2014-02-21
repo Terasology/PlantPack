@@ -20,7 +20,7 @@
     "categories": ["wood"],
 
     "entity": {
-        "prefab": "GrowingFlora:TreeTrunk"
+        "prefab": "PlantPack:OakTrunk"
     },
 
     "shape": "Engine:pillar",

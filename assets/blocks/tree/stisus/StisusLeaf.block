@@ -21,6 +21,6 @@
     "shadowCasting" : false,
     "luminance" : 8,
     "entity": {
-        "prefab": "GrowingFlora:TreeLeaf"
+        "prefab": "PlantPack:StisusLeaf"
     }
 }

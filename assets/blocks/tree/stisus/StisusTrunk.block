@@ -21,7 +21,7 @@
     "categories": ["wood"],
 
     "entity": {
-        "prefab": "GrowingFlora:TreeTrunk"
+        "prefab": "PlantPack:StisusTrunk"
     },
 
     "shape": "Engine:pillar",

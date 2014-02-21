@@ -20,7 +20,7 @@
     "categories": ["wood"],
 
     "entity": {
-        "prefab": "GrowingFlora:TreeTrunk"
+        "prefab": "PlantPack:SakuraTrunk"
     },
 
     "shape": "Engine:pillar",

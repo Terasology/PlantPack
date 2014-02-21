@@ -21,7 +21,7 @@
     "categories": ["wood"],
 
     "entity": {
-        "prefab": "GrowingFlora:TreeTrunk"
+        "prefab": "PlantPack:MithrootTrunk"
     },
 
     "shape": "Engine:pillar",

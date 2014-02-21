@@ -16,6 +16,6 @@
 {
     "basedOn": "core:leaf",
     "entity": {
-        "prefab": "GrowingFlora:TreeLeaf"
+        "prefab": "PlantPack:BirchLeaf"
     }
 }
