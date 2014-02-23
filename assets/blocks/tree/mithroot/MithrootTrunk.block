@@ -15,7 +15,7 @@
  */
 {
     "hardness": 10,
-    "luminance" : 1,
+    "luminance": 1,
     "displayName": "Mithroot Log",
 
     "categories": ["wood"],
@@ -26,12 +26,12 @@
 
     "shape": "Engine:pillar",
 
-    "tile": "PlantPack:OakBark",
+    "tile": "PlantPack:MithrootBark",
 
     // Graphics
     "tiles": {
-        "sides": "PlantPack:OakBark",
-        "topBottom": "PlantPack:OakTrunk",
-        "center": "PlantPack:OakBark"
+        "sides": "PlantPack:MithrootBark",
+        "topBottom": "PlantPack:MithrootTrunk",
+        "center": "PlantPack:MithrootBark"
     }
 }

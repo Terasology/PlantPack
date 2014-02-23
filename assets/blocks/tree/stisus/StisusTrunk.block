@@ -15,7 +15,7 @@
  */
 {
     "hardness": 6,
-    "luminance" : 2,
+    "luminance": 2,
     "displayName": "Stisus Log",
 
     "categories": ["wood"],
@@ -26,12 +26,12 @@
 
     "shape": "Engine:pillar",
 
-    "tile": "PlantPack:OakBark",
+    "tile": "PlantPack:StisusBark",
 
     // Graphics
     "tiles": {
-        "sides": "PlantPack:OakBark",
-        "topBottom": "PlantPack:OakTrunk",
-        "center": "PlantPack:OakBark"
+        "sides": "PlantPack:StisusBark",
+        "topBottom": "PlantPack:StisusTrunk",
+        "center": "PlantPack:StisusBark"
     }
 }

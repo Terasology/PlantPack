@@ -25,12 +25,12 @@
 
     "shape": "Engine:pillar",
 
-    "tile": "PlantPack:OakBark",
+    "tile": "PlantPack:BroomBark",
 
     // Graphics
     "tiles": {
-        "sides": "PlantPack:OakBark",
-        "topBottom": "PlantPack:OakTrunk",
-        "center": "PlantPack:OakBark"
+        "sides": "PlantPack:BroomBark",
+        "topBottom": "PlantPack:BroomTrunk",
+        "center": "PlantPack:BroomBark"
     }
 }
