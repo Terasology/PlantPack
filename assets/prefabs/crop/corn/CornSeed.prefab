@@ -3,7 +3,8 @@
     "Item": {
         "icon": "PlantPack:items.Corn",
         "stackId": "PlantPack:items.CornSeed",
-        "renderWithIcon": true
+        "renderWithIcon": true,
+        "consumedOnUse": true
     },
     "DisplayName": {
         "name": "Corn Seed"

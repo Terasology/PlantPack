@@ -21,9 +21,8 @@
 {
     "author": "metouto",
     "basedOn": "core:plant",
-    "displayName": "Corn Seed",
     "entity": {
-        "prefab": "PlantPack:GrowingCornSapling"
+        "prefab": "PlantPack:GrowingCorn"
     },
     "tile": "Crops:Corn1"
 }

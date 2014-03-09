@@ -21,9 +21,8 @@
 {
     "author": "metouto",
     "basedOn": "core:plant",
-    "displayName": "Rice Seed",
     "entity": {
-        "prefab": "PlantPack:GrowingRiceSapling"
+        "prefab": "PlantPack:GrowingRice"
     },
     "tile": "Crops:Rice1"
 }
