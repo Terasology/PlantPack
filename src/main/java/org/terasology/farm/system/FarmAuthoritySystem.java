@@ -24,7 +24,6 @@ import org.terasology.farm.component.FarmSoilComponent;
 import org.terasology.farm.component.SeedComponent;
 import org.terasology.farm.event.BeforeSeedPlanted;
 import org.terasology.farm.event.SeedPlanted;
-import org.terasology.gf.PlantedSaplingComponent;
 import org.terasology.gf.grass.GetGrowthChance;
 import org.terasology.logic.common.ActivateEvent;
 import org.terasology.math.Side;
@@ -64,10 +63,6 @@ public class FarmAuthoritySystem extends BaseComponentSystem {
                 PlaceBlocks placeBlocks = new PlaceBlocks(blockLocation, blockPlaced);
                 worldProvider.getWorldEntity().send(placeBlocks);
                 if (!placeBlocks.isConsumed()) {
-                    EntityRef plantedEntity = blockEntityRegistry.getEntityAt(blockLocation);
-                    PlantedSaplingComponent planted = new PlantedSaplingComponent();
-                    plantedEntity.addComponent(planted);
-
                     item.send(new SeedPlanted(blockLocation));
                     consume = false;
                 }
