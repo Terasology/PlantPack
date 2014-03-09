@@ -1,0 +1,14 @@
+{
+    "parent": "engine:iconItem",
+    "Item": {
+        "icon": "PlantPack:items.Rice",
+        "stackId": "PlantPack:items.RiceSeed",
+        "renderWithIcon": true
+    },
+    "DisplayName": {
+        "name": "Rice Seed"
+    },
+    "Seed": {
+        "blockPlaced": "PlantPack:Rice1"
+    }
+}
