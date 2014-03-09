@@ -24,12 +24,16 @@ import org.terasology.farm.component.FarmSoilComponent;
 import org.terasology.farm.component.SeedComponent;
 import org.terasology.farm.event.BeforeSeedPlanted;
 import org.terasology.farm.event.SeedPlanted;
+import org.terasology.gf.PlantedSaplingComponent;
+import org.terasology.gf.grass.GetGrowthChance;
 import org.terasology.logic.common.ActivateEvent;
 import org.terasology.math.Side;
 import org.terasology.math.Vector3i;
 import org.terasology.registry.In;
+import org.terasology.world.BlockEntityRegistry;
 import org.terasology.world.WorldProvider;
 import org.terasology.world.block.Block;
+import org.terasology.world.block.BlockComponent;
 import org.terasology.world.block.entity.placement.PlaceBlocks;
 
 import javax.vecmath.Vector3f;
@@ -38,12 +42,14 @@ import javax.vecmath.Vector3f;
  * @author Marcin Sciesinski <marcins78@gmail.com>
  */
 @RegisterSystem(RegisterMode.AUTHORITY)
-public class SeedPlacementSystem extends BaseComponentSystem {
+public class FarmAuthoritySystem extends BaseComponentSystem {
     @In
     private WorldProvider worldProvider;
+    @In
+    private BlockEntityRegistry blockEntityRegistry;
 
     @ReceiveEvent
-    public void planting(ActivateEvent event, EntityRef item, SeedComponent seed) {
+    public void plantingSeeds(ActivateEvent event, EntityRef item, SeedComponent seed) {
         boolean consume = true;
         EntityRef target = event.getTarget();
         // Clicked on top of soil
@@ -58,6 +64,10 @@ public class SeedPlacementSystem extends BaseComponentSystem {
                 PlaceBlocks placeBlocks = new PlaceBlocks(blockLocation, blockPlaced);
                 worldProvider.getWorldEntity().send(placeBlocks);
                 if (!placeBlocks.isConsumed()) {
+                    EntityRef plantedEntity = blockEntityRegistry.getEntityAt(blockLocation);
+                    PlantedSaplingComponent planted = new PlantedSaplingComponent();
+                    plantedEntity.addComponent(planted);
+
                     item.send(new SeedPlanted(blockLocation));
                     consume = false;
                 }
@@ -66,6 +76,16 @@ public class SeedPlacementSystem extends BaseComponentSystem {
 
         if (consume) {
             event.consume();
+        }
+    }
+
+    @ReceiveEvent
+    public void soilGrowthImprovement(GetGrowthChance event, EntityRef plant, BlockComponent blockComponent) {
+        Vector3i position = blockComponent.getPosition();
+        EntityRef soil = blockEntityRegistry.getEntityAt(new Vector3i(position.x, position.y - 1, position.z));
+        FarmSoilComponent farmSoil = soil.getComponent(FarmSoilComponent.class);
+        if (farmSoil != null) {
+            event.multiply(farmSoil.growChanceMultiplier);
         }
     }
 }
