@@ -40,8 +40,7 @@ public class CropAuthoritySystem extends BaseComponentSystem {
         Vector3i location = event.getLocation();
         EntityRef plantedEntity = blockEntityRegistry.getEntityAt(location);
         if (plantedEntity.hasComponent(LivingPlantComponent.class)) {
-            PlantedSaplingComponent planted = new PlantedSaplingComponent();
-            plantedEntity.addComponent(planted);
+            plantedEntity.addComponent(new PlantedSaplingComponent());
         }
     }
 }
