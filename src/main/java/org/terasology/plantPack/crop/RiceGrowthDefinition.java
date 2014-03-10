@@ -3,7 +3,7 @@ package org.terasology.plantPack.crop;
 import com.google.common.base.Function;
 import com.google.common.base.Predicate;
 import org.terasology.anotherWorld.LocalParameters;
-import org.terasology.gf.grass.CropGrowthDefinition;
+import org.terasology.gf.grass.ReplaceBlockGrowthDefinition;
 import org.terasology.world.block.BlockUri;
 import org.terasology.world.generator.plugin.RegisterPlugin;
 
@@ -13,7 +13,7 @@ import java.util.Arrays;
  * @author Marcin Sciesinski <marcins78@gmail.com>
  */
 @RegisterPlugin
-public class RiceGrowthDefinition extends CropGrowthDefinition {
+public class RiceGrowthDefinition extends ReplaceBlockGrowthDefinition {
     public static final String ID = "PlantPack:rice";
 
     public RiceGrowthDefinition() {
