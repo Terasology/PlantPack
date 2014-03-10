@@ -21,6 +21,7 @@ import org.terasology.entitySystem.systems.BaseComponentSystem;
 import org.terasology.entitySystem.systems.RegisterMode;
 import org.terasology.entitySystem.systems.RegisterSystem;
 import org.terasology.farm.event.SeedPlanted;
+import org.terasology.gf.LivingPlantComponent;
 import org.terasology.gf.PlantedSaplingComponent;
 import org.terasology.math.Vector3i;
 import org.terasology.registry.In;
@@ -38,7 +39,9 @@ public class CropAuthoritySystem extends BaseComponentSystem {
     public void cropPlanted(SeedPlanted event, EntityRef plant) {
         Vector3i location = event.getLocation();
         EntityRef plantedEntity = blockEntityRegistry.getEntityAt(location);
-        PlantedSaplingComponent planted = new PlantedSaplingComponent();
-        plantedEntity.addComponent(planted);
+        if (plantedEntity.hasComponent(LivingPlantComponent.class)) {
+            PlantedSaplingComponent planted = new PlantedSaplingComponent();
+            plantedEntity.addComponent(planted);
+        }
     }
 }
