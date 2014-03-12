@@ -102,10 +102,10 @@ public class SeedBagAssetResolver implements AssetResolver<Texture, TextureData>
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {
                 int argb = image.getRGB(x, y);
-                int r = (argb & 0x00FF0000) >> 16;
-                int g = (argb & 0x0000FF00) >> 8;
-                int b = (argb & 0x000000FF);
-                int a = (argb & 0xFF000000) >> 24;
+                int r = (argb >> 16) & 0xFF;
+                int g = (argb >> 8) & 0xFF;
+                int b = argb & 0xFF;
+                int a = (argb >> 24) & 0xFF;
                 data.put(UnsignedBytes.checkedCast(r));
                 data.put(UnsignedBytes.checkedCast(g));
                 data.put(UnsignedBytes.checkedCast(b));

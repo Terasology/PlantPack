@@ -1,7 +1,6 @@
 {
     "parent": "engine:iconItem",
     "Item": {
-        "icon": "PlantPack:SeedBag(PlantPack:items.Corn)",
         "stackId": "PlantPack:items.CornSeed",
         "renderWithIcon": true,
         "consumedOnUse": true
