@@ -59,7 +59,7 @@ public class SeedBagAssetResolver implements AssetResolver<Texture, TextureData>
         try {
             int resultWidth = resultImage.getWidth();
             int resultHeight = resultImage.getHeight();
-            gr.drawImage(seedTexture, resultWidth / 4, 3 * resultHeight / 2, resultWidth / 2, resultWidth / 2, null);
+            gr.drawImage(seedTexture, resultWidth / 4, 3 * resultHeight / 8, resultWidth / 2, resultWidth / 2, null);
         } finally {
             gr.dispose();
         }
