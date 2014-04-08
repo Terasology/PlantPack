@@ -23,7 +23,7 @@
         "prefab": "PlantPack:GrandMapleTrunk"
     },
 
-    "shape": "Engine:pillar",
+    "shape": "StructuralResources:Pillar",
 
     "tile": "PlantPack:GrandMapleBark",
 

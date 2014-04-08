@@ -23,7 +23,7 @@
         "prefab": "PlantPack:BirchTrunk"
     },
 
-    "shape": "Engine:pillar",
+    "shape": "StructuralResources:Pillar",
 
     "tile": "PlantPack:BirchBark",
 

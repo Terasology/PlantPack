@@ -24,7 +24,7 @@
         "prefab": "PlantPack:StisusTrunk"
     },
 
-    "shape": "Engine:pillar",
+    "shape": "StructuralResources:Pillar",
 
     "tile": "PlantPack:StisusBark",
 

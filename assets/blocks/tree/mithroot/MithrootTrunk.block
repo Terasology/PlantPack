@@ -24,7 +24,7 @@
         "prefab": "PlantPack:MithrootTrunk"
     },
 
-    "shape": "Engine:pillar",
+    "shape": "StructuralResources:Pillar",
 
     "tile": "PlantPack:MithrootBark",
 

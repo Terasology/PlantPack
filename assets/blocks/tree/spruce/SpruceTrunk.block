@@ -23,7 +23,7 @@
         "prefab": "PlantPack:SpruceTrunk"
     },
 
-    "shape": "Engine:pillar",
+    "shape": "StructuralResources:Pillar",
 
     "tile": "PlantPack:SpruceBark",
 
