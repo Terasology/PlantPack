@@ -30,6 +30,8 @@ import java.awt.image.BufferedImage;
 import java.nio.ByteBuffer;
 
 public class SeedBagAssetResolver implements AssetResolver<Texture, TextureData> {
+    private static final Name PLANT_PACK_MODULE = new Name("plantpack");
+
     @Override
     public AssetUri resolve(Name partialUri) {
         String[] parts = partialUri.toString().split("\\(", 2);
@@ -44,11 +46,11 @@ public class SeedBagAssetResolver implements AssetResolver<Texture, TextureData>
 
     @Override
     public Texture resolve(AssetUri uri, AssetFactory<TextureData, Texture> factory) {
-        if (!"plantpack".equals(uri.getModuleName().toString())
-                || !uri.getAssetName().toString().startsWith("seedbag(")) {
+        final String assetName = uri.getAssetName().toString().toLowerCase();
+        if (!PLANT_PACK_MODULE.equals(uri.getModuleName())
+                || !assetName.startsWith("seedbag(")) {
             return null;
         }
-        String assetName = uri.getAssetName().toString();
         String[] split = assetName.split("\\(", 2);
 
         BufferedImage resultImage = TextureUtil.convertToImage(Assets.getTextureRegion("PlantPack:farming.Pouch"));
