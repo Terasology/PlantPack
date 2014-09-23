@@ -46,18 +46,18 @@ public class BroomGrowthDefinition extends LSystemBasedTreeGrowthDefinition {
 
         SimpleAxionElementReplacement trunkTop = new SimpleAxionElementReplacement("t");
         trunkTop.addReplacement(0.6f,
-                new SimpleAxionElementReplacement.ReplacementGenerator() {
+                new AxionElementReplacement() {
                     @Override
-                    public String generateReplacement(Random rnd, String currentAxion) {
+                    public String getReplacement(Random rnd, String parameter, String currentAxion) {
                         // 137.5 degrees is a golden ratio
                         int deg = rnd.nextInt(130, 147);
                         return "+(" + deg + ")[&Mb]Wt";
                     }
                 });
         trunkTop.addReplacement(0.4f,
-                new SimpleAxionElementReplacement.ReplacementGenerator() {
+                new AxionElementReplacement() {
                     @Override
-                    public String generateReplacement(Random rnd, String currentAxion) {
+                    public String getReplacement(Random rnd, String parameter, String currentAxion) {
                         // Always generate at least 2 branches
                         if (currentAxion.split("b").length < 2) {
                             // 137.5 degrees is a golden ratio

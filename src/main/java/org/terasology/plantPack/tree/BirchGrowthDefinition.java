@@ -21,10 +21,13 @@ import org.terasology.gf.tree.lsystem.AdvanceAxionElementGeneration;
 import org.terasology.gf.tree.lsystem.AdvancedLSystemTreeDefinition;
 import org.terasology.gf.tree.lsystem.AxionElementGeneration;
 import org.terasology.gf.tree.lsystem.AxionElementReplacement;
+import org.terasology.gf.tree.lsystem.BlockLengthElementGeneration;
 import org.terasology.gf.tree.lsystem.DefaultAxionElementGeneration;
+import org.terasology.gf.tree.lsystem.GrowthAxionElementReplacement;
 import org.terasology.gf.tree.lsystem.LSystemBasedTreeGrowthDefinition;
 import org.terasology.gf.tree.lsystem.SimpleAxionElementReplacement;
 import org.terasology.gf.tree.lsystem.SurroundAxionElementGeneration;
+import org.terasology.gf.tree.lsystem.SurroundLengthAxionElementGeneration;
 import org.terasology.gf.tree.lsystem.TreeBlockDefinition;
 import org.terasology.utilities.random.Random;
 import org.terasology.world.generator.plugin.RegisterPlugin;
@@ -42,43 +45,37 @@ public class BirchGrowthDefinition extends LSystemBasedTreeGrowthDefinition {
         Map<Character, AxionElementReplacement> replacementMap = Maps.newHashMap();
 
         SimpleAxionElementReplacement sapling = new SimpleAxionElementReplacement("s");
-        sapling.addReplacement(1f, "Tt");
+        sapling.addReplacement(1f, "T(0.5)t");
 
         SimpleAxionElementReplacement trunkTop = new SimpleAxionElementReplacement("t");
         trunkTop.addReplacement(0.6f,
-                new SimpleAxionElementReplacement.ReplacementGenerator() {
+                new AxionElementReplacement() {
                     @Override
-                    public String generateReplacement(Random rnd, String currentAxion) {
+                    public String getReplacement(Random rnd, String parameter, String currentAxion) {
                         // 137.5 degrees is a golden ratio
                         int deg = rnd.nextInt(120, 157);
-                        return "+(" + deg + ")[&Mb]Wt";
+                        return "+(" + deg + ")[&B(0.5)b]T(0.5)t";
                     }
                 });
         trunkTop.addReplacement(0.4f,
-                new SimpleAxionElementReplacement.ReplacementGenerator() {
+                new AxionElementReplacement() {
                     @Override
-                    public String generateReplacement(Random rnd, String currentAxion) {
+                    public String getReplacement(Random rnd, String parameter, String currentAxion) {
                         // Always generate at least 2 branches
                         if (currentAxion.split("b").length < 2) {
                             // 137.5 degrees is a golden ratio
                             int deg = rnd.nextInt(130, 147);
-                            return "+(" + deg + ")[&Mb]Wt";
+                            return "+(" + deg + ")[&B(0.5)b]T(0.5)t";
                         }
-                        return "Wt";
+                        return "t";
                     }
                 });
-
-        SimpleAxionElementReplacement smallBranch = new SimpleAxionElementReplacement("b");
-        smallBranch.addReplacement(0.8f, "Bb");
-
-        SimpleAxionElementReplacement trunk = new SimpleAxionElementReplacement("T");
-        trunk.addReplacement(0.7f, "TN");
 
         replacementMap.put('s', sapling);
         replacementMap.put('g', sapling);
         replacementMap.put('t', trunkTop);
-        replacementMap.put('T', trunk);
-        replacementMap.put('b', smallBranch);
+        replacementMap.put('T', new GrowthAxionElementReplacement("T", 1.2f));
+        replacementMap.put('B', new GrowthAxionElementReplacement("B", 1.1f));
 
         TreeBlockDefinition birchSapling = new TreeBlockDefinition("PlantPack:BirchSapling", PartOfTreeComponent.Part.SAPLING);
         TreeBlockDefinition birchSaplingGenerated = new TreeBlockDefinition(GENERATED_BLOCK, PartOfTreeComponent.Part.SAPLING);
@@ -95,18 +92,16 @@ public class BirchGrowthDefinition extends LSystemBasedTreeGrowthDefinition {
 
         // Trunk building blocks
         blockMap.put('t', new SurroundAxionElementGeneration(greenLeaf, greenLeaf, trunkAdvance, 2f));
-        blockMap.put('T', new DefaultAxionElementGeneration(birchTrunk, trunkAdvance));
-        blockMap.put('N', new DefaultAxionElementGeneration(birchTrunk, trunkAdvance));
-        blockMap.put('W', new SurroundAxionElementGeneration(birchBranch, greenLeaf, trunkAdvance, 2f));
+        blockMap.put('T', new BlockLengthElementGeneration(birchTrunk, trunkAdvance));
 
         // Branch building blocks
         SurroundAxionElementGeneration smallBranchGeneration = new SurroundAxionElementGeneration(greenLeaf, greenLeaf, branchAdvance, 2.6f);
         smallBranchGeneration.setMaxZ(0);
-        SurroundAxionElementGeneration largeBranchGeneration = new SurroundAxionElementGeneration(birchBranch, greenLeaf, branchAdvance, 1.1f, 3.5f);
-        largeBranchGeneration.setMaxZ(0);
         blockMap.put('b', smallBranchGeneration);
+
+        SurroundLengthAxionElementGeneration largeBranchGeneration = new SurroundLengthAxionElementGeneration(birchBranch, greenLeaf, branchAdvance, 1.1f, 3.5f);
+        largeBranchGeneration.setMaxZ(0);
         blockMap.put('B', largeBranchGeneration);
-        blockMap.put('M', new AdvanceAxionElementGeneration(branchAdvance));
 
         treeDefinition = new AdvancedLSystemTreeDefinition(ID, "g", replacementMap, blockMap, 1.5f);
     }
