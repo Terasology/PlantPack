@@ -19,7 +19,7 @@
     "displayName": "Stisus Log",
 
     "categories": ["wood"],
-
+    "sounds": "Core:wood",
     "entity": {
         "prefab": "PlantPack:StisusTrunk"
     },

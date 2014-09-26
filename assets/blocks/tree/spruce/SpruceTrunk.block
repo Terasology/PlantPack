@@ -18,7 +18,7 @@
     "displayName": "Spruce Log",
 
     "categories": ["wood"],
-
+    "sounds": "Core:wood",
     "entity": {
         "prefab": "PlantPack:SpruceTrunk"
     },

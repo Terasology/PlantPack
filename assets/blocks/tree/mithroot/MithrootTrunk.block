@@ -17,7 +17,7 @@
     "hardness": 10,
     "luminance": 1,
     "displayName": "Mithroot Log",
-
+    "sounds": "Core:wood",
     "categories": ["wood"],
 
     "entity": {
