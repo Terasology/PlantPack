@@ -18,7 +18,7 @@
     "displayName": "GrandMaple Log",
 
     "categories": ["wood"],
-
+    "sounds": "Core:wood",
     "entity": {
         "prefab": "PlantPack:GrandMapleTrunk"
     },

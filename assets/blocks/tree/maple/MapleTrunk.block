@@ -18,7 +18,7 @@
     "displayName": "Pine Log",
 
     "categories": ["wood"],
-
+    "sounds": "Core:wood",
     "entity": {
         "prefab": "PlantPack:MapleTrunk"
     },
