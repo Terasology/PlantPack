@@ -24,7 +24,7 @@ public class CornGrowthDefinition extends ReplaceBlockGrowthDefinition {
                 new Predicate<LocalParameters>() {
                     @Override
                     public boolean apply(LocalParameters input) {
-                        return input.getHumidity() > 0.2f && input.getTemperature() > 0.4f;
+                        return input.getHumidity() > 0.2f && input.getTemperature() > 10f;
                     }
                 },
                 new Function<LocalParameters, Float>() {

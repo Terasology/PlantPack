@@ -23,7 +23,7 @@ public class RiceGrowthDefinition extends ReplaceBlockGrowthDefinition {
                 new Predicate<LocalParameters>() {
                     @Override
                     public boolean apply(LocalParameters input) {
-                        return input.getHumidity() > 0.4f && input.getTemperature() > 0.4f;
+                        return input.getHumidity() > 0.4f && input.getTemperature() > 15f;
                     }
                 },
                 new Function<LocalParameters, Float>() {
