@@ -33,5 +33,12 @@ public class RiceGrowthDefinition extends ReplaceBlockGrowthDefinition {
                     }
                 }
         );
+        setDeathCondition(
+                new Predicate<LocalParameters>() {
+                    @Override
+                    public boolean apply(LocalParameters input) {
+                        return input.getHumidity()<0.4f || input.getTemperature() < 5f;
+                    }
+                }, new BlockUri("PlantPack", "DeadBush"));
     }
 }

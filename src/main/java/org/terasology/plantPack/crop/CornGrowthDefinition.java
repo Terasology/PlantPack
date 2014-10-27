@@ -34,5 +34,12 @@ public class CornGrowthDefinition extends ReplaceBlockGrowthDefinition {
                     }
                 }
         );
+        setDeathCondition(
+                new Predicate<LocalParameters>() {
+                    @Override
+                    public boolean apply(LocalParameters input) {
+                        return input.getHumidity()<0.2f || input.getTemperature() < 0f;
+                    }
+                }, new BlockUri("PlantPack", "DeadBush"));
     }
 }
