@@ -19,7 +19,7 @@
  */
 {
     "author" : "eleazzaar",
-    "basedOn" : "core:plant"
+    "basedOn" : "core:plant",
     "entity": {
         "prefab": "PlantPack:DeadBush"
     },
