@@ -58,8 +58,7 @@ public class FarmAuthoritySystem extends BaseComponentSystem {
             if (!plantEvent.isConsumed()) {
                 Block blockPlaced = seed.blockPlaced;
                 Vector3f location = event.getTargetLocation();
-                location.add(new Vector3f(0, 1, 0));
-                Vector3i blockLocation = new Vector3i(location, 0.5f);
+                Vector3i blockLocation = new Vector3i(location.x + 0.5f, location.y + 1.5f, location.z + 0.5f);
                 PlaceBlocks placeBlocks = new PlaceBlocks(blockLocation, blockPlaced);
                 worldProvider.getWorldEntity().send(placeBlocks);
                 if (!placeBlocks.isConsumed()) {
@@ -77,10 +76,13 @@ public class FarmAuthoritySystem extends BaseComponentSystem {
     @ReceiveEvent
     public void soilGrowthImprovement(GetGrowthChance event, EntityRef plant, BlockComponent blockComponent) {
         Vector3i position = blockComponent.getPosition();
-        EntityRef soil = blockEntityRegistry.getEntityAt(new Vector3i(position.x, position.y - 1, position.z));
-        FarmSoilComponent farmSoil = soil.getComponent(FarmSoilComponent.class);
-        if (farmSoil != null) {
-            event.multiply(farmSoil.growChanceMultiplier);
+        Vector3i soilLocation = new Vector3i(position.x, position.y - 1, position.z);
+        if (worldProvider.isBlockRelevant(soilLocation)) {
+            EntityRef soil = blockEntityRegistry.getEntityAt(soilLocation);
+            FarmSoilComponent farmSoil = soil.getComponent(FarmSoilComponent.class);
+            if (farmSoil != null) {
+                event.multiply(farmSoil.growChanceMultiplier);
+            }
         }
     }
 }
