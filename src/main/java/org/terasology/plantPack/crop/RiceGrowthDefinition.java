@@ -21,7 +21,6 @@ import org.terasology.anotherWorld.LocalParameters;
 import org.terasology.gf.grass.AdvancedStagesGrowthDefinition;
 import org.terasology.world.block.BlockUri;
 import org.terasology.world.generator.plugin.RegisterPlugin;
-import org.terasology.world.time.WorldTime;
 
 import java.util.Arrays;
 
@@ -45,7 +44,7 @@ public class RiceGrowthDefinition extends AdvancedStagesGrowthDefinition {
                     public Long apply(LocalParameters input) {
                         // Corn growth depends on humidity
                         float humidity = input.getHumidity();
-                        long yearLength = 24 * WorldTime.DAY_LENGTH;
+                        long yearLength = 24 * 150000;
                         float minGrowthLength = yearLength / 3f;
                         int stageCount = 4;
                         float minStageGrowthLength = minGrowthLength / (stageCount - 1);

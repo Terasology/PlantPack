@@ -21,7 +21,6 @@ import org.terasology.anotherWorld.LocalParameters;
 import org.terasology.gf.grass.AdvancedStagesGrowthDefinition;
 import org.terasology.world.block.BlockUri;
 import org.terasology.world.generator.plugin.RegisterPlugin;
-import org.terasology.world.time.WorldTime;
 
 import java.util.Arrays;
 
@@ -45,7 +44,7 @@ public class CornGrowthDefinition extends AdvancedStagesGrowthDefinition {
                     public Long apply(LocalParameters input) {
                         // Corn growth depends on temperature
                         float temperature = input.getTemperature();
-                        long yearLength = 24 * WorldTime.DAY_LENGTH;
+                        long yearLength = 24 * 150000;
                         float minGrowthLength = yearLength / 7f;
                         int stageCount = 7;
                         float minStageGrowthLength = minGrowthLength / (stageCount - 1);
