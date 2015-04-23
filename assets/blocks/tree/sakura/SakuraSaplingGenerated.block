@@ -1,7 +1,0 @@
-{
-    "basedOn": "core:plant",
-    "displayName": "Sakura Sapling",
-    "entity": {
-        "prefab": "PlantPack:SakuraSaplingGenerated"
-    }
-}

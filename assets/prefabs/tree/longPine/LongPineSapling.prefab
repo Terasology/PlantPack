@@ -1,9 +1,2 @@
 {
-    "LivingPlant": {
-        "type": "PlantPack:longPine"
-    },
-    "PlantedSapling": { },
-    "PartOfTree": {
-        "part": "SAPLING"
-    }
 }

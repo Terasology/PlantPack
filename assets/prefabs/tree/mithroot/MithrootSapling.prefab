@@ -1,9 +1,2 @@
 {
-    "LivingPlant": {
-        "type": "PlantPack:mithroot"
-    },
-    "PlantedSapling": { },
-    "PartOfTree": {
-        "part": "SAPLING"
-    }
 }

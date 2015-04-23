@@ -1,9 +1,2 @@
 {
-    "LivingPlant": {
-        "type": "PlantPack:spruce"
-    },
-    "PlantedSapling": { },
-    "PartOfTree": {
-        "part": "SAPLING"
-    }
 }

@@ -1,7 +1,0 @@
-{
-    "basedOn": "core:plant",
-    "displayName": "LongPine Sapling",
-    "entity": {
-        "prefab": "PlantPack:LongPineSaplingGenerated"
-    }
-}
