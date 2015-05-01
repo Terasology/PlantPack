@@ -1,9 +1,2 @@
 {
-    "LivingPlant": {
-        "type": "PlantPack:sakura"
-    },
-    "PlantedSapling": { },
-    "PartOfTree": {
-        "part": "SAPLING"
-    }
 }

@@ -1,9 +1,2 @@
 {
-    "LivingPlant": {
-        "type": "PlantPack:broom"
-    },
-    "PlantedSapling": { },
-    "PartOfTree": {
-        "part": "SAPLING"
-    }
 }

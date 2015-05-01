@@ -1,9 +1,0 @@
-{
-    "basedOn": "core:plant",
-    "displayName": "Stisus Sapling",
-    "shadowCasting" : false,
-    "luminance" : 10,
-    "entity": {
-        "prefab": "PlantPack:StisusSaplingGenerated"
-    }
-}

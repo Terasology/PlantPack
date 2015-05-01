@@ -3,23 +3,7 @@
     "version" : "0.1.0",
     "author" : "Marcin Sciesinski <marcins78@gmail.com>, Esa-Petri",
     "displayName" : "PlantPack",
-    "description" : "Provides basic plant definitions",
-    "dependencies" : [
-            {
-                "id" : "AnotherWorld",
-                "minVersion" : "0.1.0"
-            },
-            {
-                "id" : "GrowingFlora",
-                "minVersion" : "0.1.0"
-            },
-            {
-                "id" : "Crops",
-                "minVersion" : "0.2.0"
-            },
-            {
-                "id" : "StructuralResources",
-                "minVersion" : "0.2.0"
-            }],
+    "description" : "Provides basic plant assets",
+    "dependencies" : [],
     "isServerSideOnly" : false
 }

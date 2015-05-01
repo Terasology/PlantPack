@@ -1,9 +1,2 @@
 {
-    "LivingPlant": {
-        "type": "PlantPack:stisus"
-    },
-    "PlantedSapling": { },
-    "PartOfTree": {
-        "part": "SAPLING"
-    }
 }
