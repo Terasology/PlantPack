@@ -1,6 +1,6 @@
 {
     "id" : "PlantPack",
-    "version" : "0.1.0",
+    "version" : "0.1.1-SNAPSHOT",
     "author" : "Marcin Sciesinski <marcins78@gmail.com>, Esa-Petri, Metouto, Josharias, Skaldarnar",
     "displayName" : "PlantPack",
     "description" : "Provides basic plant assets",
