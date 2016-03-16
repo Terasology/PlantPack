@@ -4,6 +4,9 @@
     "author" : "Marcin Sciesinski <marcins78@gmail.com>, Esa-Petri, Metouto, Josharias, Skaldarnar",
     "displayName" : "PlantPack",
     "description" : "Provides basic plant assets",
-    "dependencies" : [],
+    "dependencies" :
+    [
+        {"id": "ChangingBlocks", "minVersion": "0.1.1-SNAPSHOT"}
+    ],
     "isServerSideOnly" : false
 }
