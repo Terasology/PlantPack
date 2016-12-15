@@ -15,7 +15,7 @@ The plants are divided into 2 types:
 Creating a New Crop
 =================
 
-*For examples of existing crops, check out assets/blocks/crop & assets/prefabs/crop*
+*For examples of existing crops, check out `assets/blocks/crop` & `assets/prefabs/crop`*
 
 Prefab File
 -----------
@@ -39,13 +39,13 @@ Here is an example of a crop with 7 stages:
     }
 }
 ```
-Each line in ***blockFamilyStages*** indicates a growth stage for the crop, and the number next to it represents the growth time it requires. The `loops` property indicates whether or not the plant should loop the growth stages after the initial growth finishes.
+Each line in `blockFamilyStages` indicates a growth stage for the crop, and the number next to it represents the growth time it requires. The `loops` property indicates whether or not the plant should loop the growth stages after the initial growth finishes.
 
 After you finish making the stages, you MUST remember the name of those stages so that you can create the .block file for each stage.
 
 Block File
 ----------
-After you finished the prefab file, you need to create a .block file for each growth stage. All .block files are located in assets/blocks/crop.
+After you finished the prefab file, you need to create a .block file for each growth stage. All .block files are located in `assets/blocks/crop`.
 
 Here is an example of a .block file for a crop:
 
@@ -64,4 +64,11 @@ Make sure you type-in the prefab in the .block file in accordance to the name of
 
 Texture Files
 -------
-After creating the prefab and block files, you also need to create the texture for each of the crop growth stages. All texture files (.png) for crops are located at assets/blockTiles/crop/. Make sure you name these texture files in accordance to the growth stages that you want to assign them to.
+After creating the prefab and block files, you also need to create the texture for each of the crop growth stages. All texture files (.png) for crops are located at `assets/blockTiles/crop/`. Make sure you name these texture files in accordance to the growth stages that you want to assign them to.
+
+
+Developing With PlantPack
+=======
+**PlantPack** assets can bring a good addition to world generation modules, you can utilize the plants that this module have to *spice up* the world that your module generates.
+
+A good example would be, [AnotherWorld](https://github.com/Terasology/AnotherWorld/) module that works together with [AnotherWorldPlant](https://github.com/Terasology/AnotherWorldPlants) that utilizes PlantPack assets.
