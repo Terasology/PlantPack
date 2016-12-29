@@ -1,0 +1,8 @@
+{
+    "author": "mdj117",
+    "basedOn": "core:plant",
+    "entity": {
+        "prefab": "PlantPack:Pineapple",
+        "keepActive": true
+    }
+}
