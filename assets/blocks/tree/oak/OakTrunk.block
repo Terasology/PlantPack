@@ -15,7 +15,7 @@
  */
 {
     "hardness": 6,
-    "displayName": "Oak Log",
+    "displayName": "Oak Trunk",
 
     "categories": ["wood"],
     "sounds": "Core:wood",

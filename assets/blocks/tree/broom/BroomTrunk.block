@@ -15,7 +15,7 @@
  */
 {
     "hardness": 2,
-    "displayName": "Broom Log",
+    "displayName": "Broom Trunk",
 
     "categories": ["wood"],
     "sounds": "Core:wood",

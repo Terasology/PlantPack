@@ -15,7 +15,7 @@
  */
 {
     "hardness": 7,
-    "displayName": "GrandMaple Log",
+    "displayName": "GrandMaple Trunk",
 
     "categories": ["wood"],
     "sounds": "Core:wood",

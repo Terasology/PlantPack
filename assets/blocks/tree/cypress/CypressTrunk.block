@@ -15,7 +15,7 @@
  */
 {
     "hardness": 8,
-    "displayName": "Cypress Log",
+    "displayName": "Cypress Trunk",
 
     "categories": ["wood"],
     "sounds": "Core:wood",

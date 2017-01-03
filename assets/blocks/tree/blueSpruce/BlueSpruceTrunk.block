@@ -15,7 +15,7 @@
  */
 {
     "hardness": 7,
-    "displayName": "BlueSpruce Log",
+    "displayName": "BlueSpruce Trunk",
 
     "categories": ["wood"],
     "sounds": "Core:wood",

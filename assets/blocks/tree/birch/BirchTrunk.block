@@ -15,7 +15,7 @@
  */
 {
     "hardness": 8,
-    "displayName": "Birch Log",
+    "displayName": "Birch Trunk",
 
     "categories": ["wood"],
     "sounds": "Core:wood",

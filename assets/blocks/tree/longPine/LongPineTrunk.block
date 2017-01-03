@@ -15,7 +15,7 @@
  */
 {
     "hardness": 5,
-    "displayName": "LongPine Log",
+    "displayName": "LongPine Trunk",
 
     "categories": ["wood"],
     "sounds": "Core:wood",

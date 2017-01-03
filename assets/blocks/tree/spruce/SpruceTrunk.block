@@ -15,7 +15,7 @@
  */
 {
     "hardness": 6,
-    "displayName": "Spruce Log",
+    "displayName": "Spruce Trunk",
 
     "categories": ["wood"],
     "sounds": "Core:wood",

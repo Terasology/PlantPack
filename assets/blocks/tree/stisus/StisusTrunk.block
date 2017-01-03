@@ -16,7 +16,7 @@
 {
     "hardness": 6,
     "luminance": 2,
-    "displayName": "Stisus Log",
+    "displayName": "Stisus Trunk",
 
     "categories": ["wood"],
     "sounds": "Core:wood",

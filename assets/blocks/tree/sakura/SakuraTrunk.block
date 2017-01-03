@@ -15,7 +15,7 @@
  */
 {
     "hardness": 7,
-    "displayName": "Sakura Log",
+    "displayName": "Sakura Trunk",
 
     "categories": ["wood"],
     "sounds": "Core:wood",
