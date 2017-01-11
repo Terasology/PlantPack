@@ -1,0 +1,14 @@
+{
+  "ChangingBlocks": {
+      "blockFamilyStages": {
+          "PlantPack:Pineapple1": 20000,
+          "PlantPack:Pineapple2": 20000,
+          "PlantPack:Pineapple3": 20000,
+          "PlantPack:Pineapple4": 30000,
+          "PlantPack:Pineapple5": 40000,
+          "PlantPack:Pineapple6": 20000,
+          "PlantPack:Pineapple7": 2000
+      },
+      "loops": false
+    }
+}
