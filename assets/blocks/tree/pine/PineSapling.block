@@ -1,5 +1,5 @@
 {
-    "basedOn": "core:plant",
+    "basedOn": "CoreAssets:plant",
     "displayName": "Pine Sapling",
     "entity": {
         "prefab": "PlantPack:PineSapling"

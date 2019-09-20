@@ -20,7 +20,7 @@
  */
 {
   "author": "metouto",
-  "basedOn": "core:plant",
+  "basedOn": "CoreAssets:plant",
   "entity": {
     "prefab": "PlantPack:MilkPlant",
     "keepActive": true
