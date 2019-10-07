@@ -52,7 +52,7 @@ Here is an example of a .block file for a crop:
 ```json
 {
     "author": "metouto",
-    "basedOn": "core:plant",
+    "basedOn": "CoreAssets:plant",
     "entity": {
         "prefab": "PlantPack:Corn",
         "keepActive": true
