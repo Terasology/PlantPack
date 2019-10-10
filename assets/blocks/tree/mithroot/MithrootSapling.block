@@ -1,5 +1,5 @@
 {
-    "basedOn": "core:plant",
+    "basedOn": "CoreAssets:plant",
     "displayName": "Mithroot Sapling",
     "shadowCasting" : false,
     "luminance" : 3,
