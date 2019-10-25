@@ -1,0 +1,20 @@
+
+{
+    "hardness": 6,
+    "displayName": "Umbrella Trunk",
+
+    "categories": ["wood"],
+    "sounds": "CoreAssets:wood",
+    "entity": {
+        "prefab": "PlantPack:UmbrellaTrunk"
+    },
+
+    "tile": "PlantPack:UmbrellaBark",
+
+    // Graphics
+    "tiles": {
+        "sides": "PlantPack:UmbrellaBark",
+        "topBottom": "PlantPack:UmbrellaTrunk",
+        "center": "PlantPack:UmbrellaBark"
+    }
+}
