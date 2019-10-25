@@ -1,0 +1,7 @@
+
+{
+    "basedOn": "CoreAssets:leaf",
+    "entity": {
+        "prefab": "PlantPack:UmbrellaLeaf"
+    }
+}
