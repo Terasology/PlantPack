@@ -1,0 +1,13 @@
+/**
+ * Reeds are a form of grass that grow in marshes and beaches
+ * in or near the edge of the water. They easily spread and
+ * can be a problem for other native plants.
+ * @author (art) Qwertygiy
+ */
+{
+    "author": "Qwertygiy",
+    "basedOn": "CoreAssets:plant",
+    "entity": {
+        "prefab": "PlantPack:ReedsBase",
+    }
+}

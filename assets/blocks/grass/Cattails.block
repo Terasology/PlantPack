@@ -1,0 +1,14 @@
+/**
+ * Cattails are a type of sedge that have a fluffy seed pod,
+ * which can be edible and has minor healing properties.
+ * Contrary to popular belief, there is no hot dog hiding
+ * within the seedpod, nor is there a cat attached.
+ * @author (art) Qwertygiy
+ */
+{
+    "author": "Qwertygiy",
+    "basedOn": "CoreAssets:plant",
+    "entity": {
+        "prefab": "PlantPack:Cattails",
+    }
+}
