@@ -1,0 +1,22 @@
+
+{
+    "hardness": 8,
+    "displayName": "Acai Palm Trunk",
+
+    "categories": ["wood"],
+    "sounds": "CoreAssets:wood",
+    "entity": {
+        "prefab": "PlantPack:AcaiPalmTrunk"
+    },
+
+    "shape": "CoreAssets:narrowBlock",
+
+    "tile": "PlantPack:AcaiPalmBark",
+
+    // Graphics
+    "tiles": {
+        "sides": "PlantPack:AcaiPalmBark",
+        "topBottom": "PlantPack:AcaiPalmTrunk",
+        "center": "PlantPack:AcaiPalmBark"
+    }
+}
