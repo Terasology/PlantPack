@@ -1,0 +1,7 @@
+{
+    "basedOn": "CoreAssets:plant",
+    "displayName": "Acai Palm Sapling",
+    "entity": {
+        "prefab": "PlantPack:AcaiPalmSapling"
+    }
+}

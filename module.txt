@@ -1,11 +1,11 @@
 {
     "id" : "PlantPack",
-    "version" : "1.0.0-SNAPSHOT",
-    "author" : "Marcin Sciesinski <marcins78@gmail.com>, Esa-Petri, Metouto, Josharias, Skaldarnar",
+    "version" : "1.1.0-SNAPSHOT",
+    "author" : "Marcin Sciesinski <marcins78@gmail.com>, Esa-Petri, Metouto, Josharias, Skaldarnar, Qwertygiy",
     "displayName" : "PlantPack",
     "description" : "Provides basic plant assets",
     "dependencies" : [
-        {"id": "CoreAssets", "minVersion": "1.0.0"}
+        {"id": "CoreAssets", "minVersion": "1.0.1"}
     ],
     "isServerSideOnly" : false
 }

@@ -1,0 +1,12 @@
+
+{
+    "basedOn": "CoreAssets:leaf",
+    "displayName": "Acai Palm Leaf",
+    "shape": "palmFrondBase",
+    "translucent": true,
+    "waving": false,
+    "tile": "acaiPalmLeafExtended",
+    "entity": {
+        "prefab": "PlantPack:AcaiPalmLeaf"
+    }
+}
