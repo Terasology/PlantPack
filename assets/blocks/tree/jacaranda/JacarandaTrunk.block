@@ -1,0 +1,20 @@
+
+{
+    "hardness": 6,
+    "displayName": "Jacaranda Trunk",
+
+    "categories": ["wood"],
+    "sounds": "CoreAssets:wood",
+    "entity": {
+        "prefab": "PlantPack:JacarandaTrunk"
+    },
+
+    "tile": "PlantPack:JacarandaBark",
+
+    // Graphics
+    "tiles": {
+        "sides": "PlantPack:JacarandaBark",
+        "topBottom": "PlantPack:JacarandaTrunk",
+        "center": "PlantPack:JacarandaBark"
+    }
+}

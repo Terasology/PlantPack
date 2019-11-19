@@ -1,0 +1,8 @@
+
+{
+    "basedOn": "CoreAssets:leaf",
+    "displayName": "Jacaranda Leaf",
+    "entity": {
+        "prefab": "PlantPack:JacarandaLeaf"
+    }
+}
