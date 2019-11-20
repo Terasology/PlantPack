@@ -1,0 +1,10 @@
+
+{
+    "basedOn": "CoreAssets:plant",
+    "hardness": 2,
+    "displayName": "Pine Straw",
+    "shape": "engine:eighthBlock",
+    "entity": {
+        "prefab": "PlantPack:PineStraw"
+    }
+}
