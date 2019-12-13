@@ -1,0 +1,14 @@
+/**
+ * Yucca is a plant that appears halfway between a clump of grass and a small bush.
+ * It grows in many climates, but particularly thrives in drier, warmer places,
+ * like the chaparral shrublands of California and Arizona.
+ * @author (art) Qwertygiy
+ */
+{
+    "author": "Qwertygiy",
+    "basedOn": "CoreAssets:plant",
+    "shape": "CoreAssets:bush2",
+    "entity": {
+        "prefab": "PlantPack:Yucca"
+    }
+}
