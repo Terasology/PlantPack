@@ -9,6 +9,6 @@
     "author": "Qwertygiy",
     "basedOn": "CoreAssets:plant",
     "entity": {
-        "prefab": "PlantPack:Cattails",
+        "prefab": "PlantPack:Cattails"
     }
 }

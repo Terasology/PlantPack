@@ -1,0 +1,13 @@
+/**
+ * A spiky bush of grassy leaves that radiate outwards from the center.
+ * Not prickly like a cactus, merely a hedge that looks like a hedgehog.
+ * @author (art) Qwertygiy
+ */
+{
+    "author": "Qwertygiy",
+    "basedOn": "CoreAssets:plant",
+    "shape": "CoreAssets:bush",
+    "entity": {
+        "prefab": "PlantPack:SpikeBush"
+    }
+}

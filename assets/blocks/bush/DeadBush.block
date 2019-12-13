@@ -1,0 +1,12 @@
+/**
+ * A dead bush. It has seen better days.
+ * @author (art) eleazzaar
+ */
+{
+    "author" : "eleazzaar",
+    "basedOn" : "CoreAssets:plant",
+    "entity": {
+        "prefab": "PlantPack:DeadBush"
+    },
+    "tile": "CoreAssets:DeadBush"
+}

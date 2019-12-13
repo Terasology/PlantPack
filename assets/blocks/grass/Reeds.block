@@ -8,6 +8,6 @@
     "author": "Qwertygiy",
     "basedOn": "CoreAssets:plant",
     "entity": {
-        "prefab": "PlantPack:Reeds",
+        "prefab": "PlantPack:Reeds"
     }
 }

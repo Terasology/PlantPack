@@ -1,0 +1,11 @@
+/**
+ * The Easter Lily Cactus is found in the shrublands of Chile.
+ * @author (art) Qwertygiy
+ */
+{
+    "author": "Qwertygiy",
+    "basedOn": "CoreAssets:plant",
+    "entity": {
+        "prefab": "PlantPack:CactusEasterLily"
+    }
+}

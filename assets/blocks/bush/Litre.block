@@ -1,0 +1,17 @@
+/**
+ * Litre is a small tree or large shrub from the Chilean Mattoral shrublands.
+ * The leaves carry toxins similar to poison ivy, earning it the scientific name
+ * "lithraea caustica".
+ * It bears no relation to the metric unit of measurement.
+ * @author (art) Qwertygiy
+ */
+{
+    "author": "Qwertygiy",
+    "basedOn": "CoreAssets:plant",
+    "shape": "CoreAssets:bush",
+    "attachmentAllowed": true,
+    "replacementAllowed": false,
+    "entity": {
+        "prefab": "PlantPack:Litre"
+    }
+}
