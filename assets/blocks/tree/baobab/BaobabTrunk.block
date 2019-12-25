@@ -1,0 +1,20 @@
+
+{
+    "hardness": 6,
+    "displayName": "Baobab Trunk",
+
+    "categories": ["wood"],
+    "sounds": "CoreAssets:wood",
+    "entity": {
+        "prefab": "PlantPack:BaobabTrunk"
+    },
+
+    "tile": "PlantPack:BaobabBark",
+
+    // Graphics
+    "tiles": {
+        "sides": "PlantPack:BaobabBark",
+        "topBottom": "PlantPack:BaobabTrunk",
+        "center": "PlantPack:BaobabBark"
+    }
+}

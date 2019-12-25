@@ -1,0 +1,15 @@
+/**
+ * Baobab leaves are a little different; because they are so sparse, you can see the branches through them.
+**/
+{
+    "basedOn": "CoreAssets:leaf",
+    "displayName": "Baobab Leaf",
+    "shape": "CoreAssets:leavesFancy",
+    "translucent": true,
+    "tiles": {
+        "center": "BaobabBranches"
+    },
+    "entity": {
+        "prefab": "PlantPack:BaobabLeaf"
+    }
+}
