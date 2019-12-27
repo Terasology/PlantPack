@@ -1,0 +1,14 @@
+/**
+ * Napier grass, also known as elephant grass, is a tall variety of grass
+ * which grows in the African savannah. It is a favorite food of pachyderms,
+ * thus the name "elephant grass", and is often grown outside of farms as a
+ * "pull crop" to attract insect pests that would otherwise eat more useful plants.
+ * @author (art) Qwertygiy
+ */
+{
+    "author": "Qwertygiy",
+    "basedOn": "CoreAssets:plant",
+    "entity": {
+        "prefab": "PlantPack:NapierMiddle"
+    }
+}
