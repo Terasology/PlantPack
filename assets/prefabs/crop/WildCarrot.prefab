@@ -1,13 +1,13 @@
 
 {
   "ChangingBlocks": {
-    "blockFamilyStages": {
-      "PlantPack:WildCarrot1": 30000,
-      "PlantPack:WildCarrot2": 30000,
-      "PlantPack:WildCarrot3": 30000,
-      "PlantPack:WildCarrot4": 30000,
-      "PlantPack:WildCarrot5": 30000
-    },
+    "blockFamilyStages": [
+      { "key": "PlantPack:WildCarrot1", "value": 30000 },
+      { "key": "PlantPack:WildCarrot2", "value": 30000 },
+      { "key": "PlantPack:WildCarrot3", "value": 30000 },
+      { "key": "PlantPack:WildCarrot4", "value": 30000 },
+      { "key": "PlantPack:WildCarrot5", "value": 30000 }
+    ],
     "loops": false
   }
 }

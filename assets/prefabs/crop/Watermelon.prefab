@@ -1,14 +1,14 @@
 
 {
   "ChangingBlocks": {
-    "blockFamilyStages": {
-      "PlantPack:Watermelon1": 30000,
-      "PlantPack:Watermelon2": 30000,
-      "PlantPack:Watermelon3": 30000,
-      "PlantPack:Watermelon4": 30000,
-      "PlantPack:Watermelon5": 30000,
-      "PlantPack:Watermelon6": 30000
-    },
+    "blockFamilyStages": [
+      { "key": "PlantPack:Watermelon1", "value": 30000 },
+      { "key": "PlantPack:Watermelon2", "value": 30000 },
+      { "key": "PlantPack:Watermelon3", "value": 30000 },
+      { "key": "PlantPack:Watermelon4", "value": 30000 },
+      { "key": "PlantPack:Watermelon5", "value": 30000 },
+      { "key": "PlantPack:Watermelon6", "value": 30000 }
+    ],
     "loops": false
   }
 }

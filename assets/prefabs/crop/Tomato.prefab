@@ -1,12 +1,12 @@
 
 {
   "ChangingBlocks": {
-    "blockFamilyStages": {
-      "PlantPack:Tomato1": 30000,
-      "PlantPack:Tomato2": 30000,
-      "PlantPack:Tomato3": 30000,
-      "PlantPack:Tomato4": 30000
-    },
+    "blockFamilyStages": [
+      { "key": "PlantPack:Tomato1", "value": 30000 },
+      { "key": "PlantPack:Tomato2", "value": 30000 },
+      { "key": "PlantPack:Tomato3", "value": 30000 },
+      { "key": "PlantPack:Tomato4", "value": 30000 }
+    ],
     "loops": false
   }
 }

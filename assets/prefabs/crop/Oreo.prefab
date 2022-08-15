@@ -1,12 +1,12 @@
 
 {
   "ChangingBlocks": {
-    "blockFamilyStages": {
-      "PlantPack:Oreo1": 30000,
-      "PlantPack:Oreo2": 30000,
-      "PlantPack:Oreo3": 30000,
-      "PlantPack:Oreo4": 30000
-    },
+    "blockFamilyStages": [
+      { "key": "PlantPack:Oreo1", "value": 30000 },
+      { "key": "PlantPack:Oreo2", "value": 30000 },
+      { "key": "PlantPack:Oreo3", "value": 30000 },
+      { "key": "PlantPack:Oreo4", "value": 30000 }
+    ],
     "loops": false
   }
 }

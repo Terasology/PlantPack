@@ -16,15 +16,15 @@
 
 {
   "ChangingBlocks": {
-    "blockFamilyStages": {
-      "PlantPack:HotCoffeePlant1": 30000,
-      "PlantPack:HotCoffeePlant2": 30000,
-      "PlantPack:HotCoffeePlant3": 30000,
-      "PlantPack:HotCoffeePlant4": 30000,
-      "PlantPack:HotCoffeePlant5": 30000,
-      "PlantPack:HotCoffeePlant6": 30000,
-      "PlantPack:HotCoffeePlant7": 30000
-    },
+    "blockFamilyStages": [
+      { "key": "PlantPack:HotCoffeePlant1", "value": 30000 },
+      { "key": "PlantPack:HotCoffeePlant2", "value": 30000 },
+      { "key": "PlantPack:HotCoffeePlant3", "value": 30000 },
+      { "key": "PlantPack:HotCoffeePlant4", "value": 30000 },
+      { "key": "PlantPack:HotCoffeePlant5", "value": 30000 },
+      { "key": "PlantPack:HotCoffeePlant6", "value": 30000 },
+      { "key": "PlantPack:HotCoffeePlant7", "value": 30000 }
+    ],
     "loops": false
   }
 }

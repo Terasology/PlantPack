@@ -1,13 +1,13 @@
 
 {
   "ChangingBlocks": {
-    "blockFamilyStages": {
-      "PlantPack:Radish1": 30000,
-      "PlantPack:Radish2": 30000,
-      "PlantPack:Radish3": 30000,
-      "PlantPack:Radish4": 30000,
-      "PlantPack:Radish5": 30000
-    },
+    "blockFamilyStages": [
+      { "key": "PlantPack:Radish1", "value": 30000 },
+      { "key": "PlantPack:Radish3", "value": 30000 },
+      { "key": "PlantPack:Radish4", "value": 30000 },
+      { "key": "PlantPack:Radish2", "value": 30000 },
+      { "key": "PlantPack:Radish5", "value": 30000 }
+    ],
     "loops": false
   }
 }

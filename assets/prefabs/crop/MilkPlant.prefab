@@ -16,15 +16,15 @@
 
 {
   "ChangingBlocks": {
-    "blockFamilyStages": {
-      "PlantPack:MilkPlant1": 30000,
-      "PlantPack:MilkPlant2": 30000,
-      "PlantPack:MilkPlant3": 30000,
-      "PlantPack:MilkPlant4": 30000,
-      "PlantPack:MilkPlant5": 30000,
-      "PlantPack:MilkPlant6": 30000,
-      "PlantPack:MilkPlant7": 30000
-    },
+    "blockFamilyStages": [
+      { "key": "PlantPack:MilkPlant1", "value": 30000 },
+      { "key": "PlantPack:MilkPlant2", "value": 30000 },
+      { "key": "PlantPack:MilkPlant3", "value": 30000 },
+      { "key": "PlantPack:MilkPlant4", "value": 30000 },
+      { "key": "PlantPack:MilkPlant5", "value": 30000 },
+      { "key": "PlantPack:MilkPlant6", "value": 30000 },
+      { "key": "PlantPack:MilkPlant7", "value": 30000 }
+    ],
     "loops": false
   }
 }
