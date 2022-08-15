@@ -6,6 +6,11 @@
   "description": "Provides basic plant assets",
   "dependencies": [
     {
+      "id": "ChangingBlocks",
+      "minVersion": "1.1.0",
+      "optional": true
+    },
+    {
       "id": "CoreAssets",
       "minVersion": "2.0.1"
     },
