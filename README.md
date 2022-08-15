@@ -1,6 +1,6 @@
 PlantPack
 =========
-A collection of trees and dynamic plants which grow over time or change in other ways.
+A collection of trees and dynamic plants. In combination with [`ChangingBlocks`](https://github.com/Terasology/ChangingBlocks) they grow over time or change in other ways.
 
 
 Plants
@@ -26,15 +26,15 @@ Here is an example of a crop with 7 stages:
 ```json
 {
   "ChangingBlocks": {
-      "blockFamilyStages": {
-          "PlantPack:Corn1": 30000,
-          "PlantPack:Corn2": 30000,
-          "PlantPack:Corn3": 30000,
-          "PlantPack:Corn4": 30000,
-          "PlantPack:Corn5": 30000,
-          "PlantPack:Corn6": 30000,
-          "PlantPack:Corn7": 30000
-      },
+      "blockFamilyStages": [
+          { "key": "PlantPack:Corn1", "value": 30000 },
+          { "key": "PlantPack:Corn2", "value": 30000 },
+          { "key": "PlantPack:Corn3", "value": 30000 },
+          { "key": "PlantPack:Corn4", "value": 30000 },
+          { "key": "PlantPack:Corn5", "value": 30000 },
+          { "key": "PlantPack:Corn6", "value": 30000 },
+          { "key": "PlantPack:Corn7", "value": 30000 }
+      ],
       "loops": false
     }
 }
