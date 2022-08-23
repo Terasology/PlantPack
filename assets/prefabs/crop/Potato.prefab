@@ -1,14 +1,13 @@
-
 {
   "ChangingBlocks": {
-    "blockFamilyStages": {
-      "PlantPack:Potato1": 30000,
-      "PlantPack:Potato2": 30000,
-      "PlantPack:Potato3": 30000,
-      "PlantPack:Potato4": 30000,
-      "PlantPack:Potato5": 30000,
-      "PlantPack:Potato6": 30000
-    },
+    "blockFamilyStages": [
+      { "key": "PlantPack:Potato1", "value": 30000 },
+      { "key": "PlantPack:Potato2", "value": 30000 },
+      { "key": "PlantPack:Potato3", "value": 30000 },
+      { "key": "PlantPack:Potato4", "value": 30000 },
+      { "key": "PlantPack:Potato5", "value": 30000 },
+      { "key": "PlantPack:Potato6", "value": 30000 }
+    ],
     "loops": false
   }
 }

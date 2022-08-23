@@ -1,13 +1,12 @@
-
 {
   "ChangingBlocks": {
-    "blockFamilyStages": {
-      "PlantPack:Squash1": 30000,
-      "PlantPack:Squash2": 30000,
-      "PlantPack:Squash3": 30000,
-      "PlantPack:Squash4": 30000,
-      "PlantPack:Squash5": 30000
-    },
+    "blockFamilyStages": [
+      { "key": "PlantPack:Squash1", "value": 30000 },
+      { "key": "PlantPack:Squash2", "value": 30000 },
+      { "key": "PlantPack:Squash3", "value": 30000 },
+      { "key": "PlantPack:Squash4", "value": 30000 },
+      { "key": "PlantPack:Squash5", "value": 30000 }
+    ],
     "loops": false
   }
 }

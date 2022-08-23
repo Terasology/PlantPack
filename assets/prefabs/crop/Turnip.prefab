@@ -1,13 +1,12 @@
-
 {
   "ChangingBlocks": {
-    "blockFamilyStages": {
-      "PlantPack:Turnip1": 30000,
-      "PlantPack:Turnip2": 30000,
-      "PlantPack:Turnip3": 30000,
-      "PlantPack:Turnip4": 30000,
-      "PlantPack:Turnip5": 30000
-    },
+    "blockFamilyStages": [
+      { "key": "PlantPack:Turnip1", "value": 30000 },
+      { "key": "PlantPack:Turnip2", "value": 30000 },
+      { "key": "PlantPack:Turnip3", "value": 30000 },
+      { "key": "PlantPack:Turnip4", "value": 30000 },
+      { "key": "PlantPack:Turnip5", "value": 30000 }
+    ],
     "loops": false
   }
 }

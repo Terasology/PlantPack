@@ -1,12 +1,11 @@
-
 {
   "ChangingBlocks": {
-    "blockFamilyStages": {
-      "PlantPack:Rice1": 30000,
-      "PlantPack:Rice2": 30000,
-      "PlantPack:Rice3": 30000,
-      "PlantPack:Rice4": 30000
-    },
+    "blockFamilyStages": [
+      { "key": "PlantPack:Rice1", "value": 30000 },
+      { "key": "PlantPack:Rice2", "value": 30000 },
+      { "key": "PlantPack:Rice3", "value": 30000 },
+      { "key": "PlantPack:Rice4", "value": 30000 }
+    ],
     "loops": false
   }
 }

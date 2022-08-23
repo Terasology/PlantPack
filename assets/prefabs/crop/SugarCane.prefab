@@ -1,13 +1,12 @@
-
 {
   "ChangingBlocks": {
-    "blockFamilyStages": {
-      "PlantPack:SugarCane1": 30000,
-      "PlantPack:SugarCane2": 30000,
-      "PlantPack:SugarCane3": 30000,
-      "PlantPack:SugarCane4": 30000,
-      "PlantPack:SugarCane5": 30000
-    },
+    "blockFamilyStages": [
+      { "key": "PlantPack:SugarCane1", "value": 30000 },
+      { "key": "PlantPack:SugarCane2", "value": 30000 },
+      { "key": "PlantPack:SugarCane3", "value": 30000 },
+      { "key": "PlantPack:SugarCane4", "value": 30000 },
+      { "key": "PlantPack:SugarCane5", "value": 30000 }
+    ],
     "loops": false
   }
 }
